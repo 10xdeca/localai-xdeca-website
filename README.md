@@ -1,8 +1,22 @@
-# SpaceClub! Website Template
-**Version:** 1.1.0
-A flexible Eleventy based static site template that’s easy to edit, easy to deploy, and easy to take anywhere.
+# Local AI Group — Website
 
-SpaceClub! is built with Eleventy, Markdown, Bootstrap, and Pagefind, making it simple to manage content while still offering powerful layouts, components, and features as your site grows.
+Website for [Local AI Group](https://localai.xdeca.com), a community for people curious about running AI on their own computer. Offline, private, and free. Part of [xdeca.com](https://xdeca.com).
 
-**Documentation, guides, and examples:**
-[https://spaceclubwiki.talkingsites.org](https://spaceclubwiki.talkingsites.org)
+## Stack
+
+- [Eleventy](https://www.11ty.dev/) — static site generator
+- [Bootstrap 5](https://getbootstrap.com/) — layout and components
+- [Pagefind](https://pagefind.app/) — static search
+- Nunjucks templates, Markdown content
+
+## Getting started
+
+```bash
+npm install
+npm start       # dev server at http://localhost:8080
+npm run build   # production build to _site/
+```
+
+## License
+
+MIT
