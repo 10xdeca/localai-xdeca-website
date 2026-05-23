@@ -1,61 +1,96 @@
-<nav class="navbar shadow-sm sticky-top bg-body" id="navbar-main">
-<div class="container">
-<a class="navbar-brand d-flex align-items-center gap-2" href="/">
-<img
-src="{{ site.logo }}" alt="{{ site.title }}" width="132" height="56" class="rounded"/>
-<span class="fw-semibold text-primary fs-3">{{ site.title }}</span>
-</a>
-<div>
-<button class="btn btn-outline-primary border-0 rounded-3 fs-5 fw-bold" onclick="openSearch()">
-<i class="bi bi-search me-2"></i>Search
-</button>
-<button
-class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#nav"
-aria-controls="nav"
-aria-expanded="false"
-aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-</div>
-<div id="nav" class="collapse navbar-collapse">
-<ul class="navbar-nav ms-auto flex-column flex-md-row justify-content-md-end">
-{% for item in navbar %}
-<li class="nav-item">
-<a class="nav-link{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
-{{ item.title }}
-</a>
-</li>
-{% endfor %}
-</ul>
-</div>
-</div>
+<nav class="navbar sticky-top" id="navbar-main">
+  <div class="container d-flex align-items-center justify-content-between gap-3">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">
+      <img src="{{ site.logo }}" alt="{{ site.title }}" width="36" height="36" class="rounded">
+      <span class="navbar-brand__name">{{ site.title }}</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="d-none d-md-flex align-items-center gap-1">
+      {% for item in navbar %}
+      <a class="cosmos-nav-link{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
+        {{ item.title }}
+      </a>
+      {% endfor %}
+    </div>
+
+    <!-- Right controls -->
+    <div class="d-flex align-items-center gap-2">
+      <button class="cosmos-nav-icon-btn" onclick="openSearch()" aria-label="Search">
+        <i class="bi bi-search"></i>
+      </button>
+      <button class="btn-theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle colour theme">
+        <i class="bi bi-moon-stars"></i>
+      </button>
+      <a href="https://lu.ma/localai" class="btn btn-primary btn-sm d-none d-md-inline-flex" target="_blank" rel="noopener">
+        <i class="bi bi-calendar-event me-1"></i> Events
+      </a>
+      <button class="cosmos-nav-icon-btn d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#nav-mobile" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-5"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile nav -->
+  <div id="nav-mobile" class="collapse w-100" id="nav-mobile">
+    <div class="container py-3 d-flex flex-column gap-1">
+      {% for item in navbar %}
+      <a class="cosmos-nav-link{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
+        {{ item.title }}
+      </a>
+      {% endfor %}
+      <a href="https://lu.ma/localai" class="btn btn-primary btn-sm mt-2 align-self-start" target="_blank" rel="noopener">
+        <i class="bi bi-calendar-event me-2"></i>Browse Events
+      </a>
+    </div>
+  </div>
 </nav>
+
 <!-- Search Modal -->
 <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered">
-<div class="modal-content border-0 shadow-lg">
-<div class="modal-header border-0 pb-0">
-<h5 class="modal-title text-primary fw-semibold" id="searchModalLabel">
-<i class="bi bi-search me-2"></i>{{ site.searchTitle | default("Search") }}
-</h5>
-<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="background:var(--color-surface-raised);border-radius:1.25rem;">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-semibold" id="searchModalLabel" style="font-family:'Outfit',sans-serif;color:var(--color-text);">
+          <i class="bi bi-search me-2" style="color:var(--color-primary)"></i>{{ site.searchTitle | default("Search") }}
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-2">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          id="searchInput"
+          placeholder="{{ site.searchPlaceholder | default('Search content...') }}"
+          oninput="performSearch()"
+          style="border-color:var(--color-border);background:var(--color-surface);color:var(--color-text);border-radius:0.75rem;"/>
+        <div id="searchResults" class="mt-3" style="max-height:400px;overflow-y:auto;"></div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="modal-body pt-2">
-<div class="mb-3">
-<input
-type="text"
-class="form-control form-control-lg border-primary"
-id="searchInput"
-placeholder="{{ site.searchPlaceholder | default('Search content...') }}"
-oninput="performSearch()"/>
-</div>
-<div
-id="searchResults" class="search-results" style="max-height: 400px; overflow-y: auto"><!-- Results will appear here -->
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<script>
+  function toggleTheme() {
+    var html = document.documentElement;
+    var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-bs-theme', next);
+    localStorage.setItem('theme', next);
+    _updateThemeIcon(next);
+  }
+
+  function _updateThemeIcon(theme) {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.innerHTML = theme === 'dark'
+      ? '<i class="bi bi-sun"></i>'
+      : '<i class="bi bi-moon-stars"></i>';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    _updateThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+  });
+</script>

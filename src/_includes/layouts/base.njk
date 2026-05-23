@@ -1,8 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script>
+  (function() {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || t === 'light') {
+      document.documentElement.setAttribute('data-bs-theme', t);
+    }
+  })();
+</script>
 <title data-pagefind-meta="title[content]" data-pagefind-index="true">
 {{ title | default(site.title) }}
 </title>
@@ -27,8 +35,14 @@ striptags | replace("\n", " ") | truncate(240, true, "") }}
 {% endif %}
 </span>
 </div>
-<main class="py-3 py-md-5">
-<div class="container">{{ content | safe }}</div>
+<main>
+{% if fullWidth %}
+  {{ content | safe }}
+{% else %}
+  <div class="py-3 py-md-5">
+    <div class="container">{{ content | safe }}</div>
+  </div>
+{% endif %}
 </main>
 </div>
 {% include "partials/footer.njk" %}

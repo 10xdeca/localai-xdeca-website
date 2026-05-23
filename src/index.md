@@ -1,23 +1,232 @@
 ---
 layout: index.njk
-title: Welcome to Space Club!
-description: Check out this home page
+title: Local AI Group
+description: A community for running AI offline and completely privately on your own computer. No internet required, no subscriptions, no data sharing.
 permalink: "/"
+fullWidth: true
 ---
 
-# Hello World!
+<!-- ── HERO ─────────────────────────────────── -->
+<section class="cosmos-hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h1 class="cosmos-hero__headline">
+          AI that works offline and keeps everything private.
+        </h1>
+        <p class="cosmos-hero__sub">
+          Everything stays on your own computer. Works without internet, keeps your data completely private, and costs nothing to run. This is the community where you learn how.
+        </p>
+        <div class="cosmos-hero__ctas">
+          <a href="https://lu.ma/localai" class="btn btn-primary btn-lg cosmos-glow-btn" target="_blank" rel="noopener">
+            <i class="bi bi-calendar-event me-2"></i>See Upcoming Events
+          </a>
+          <a href="/about/" class="btn btn-outline-primary btn-lg">
+            About the Group
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1 d-none d-lg-block">
+{% set nextEvent = collections.upcomingEvents | first %}
+{% if nextEvent %}
+<div class="cosmos-hero-card">
+<div class="cosmos-hero-card__label">Next meetup</div>
+<h3 class="cosmos-hero-card__title">{{ nextEvent.data.title }}</h3>
+{% if nextEvent.data.eventDate %}<div class="cosmos-hero-card__meta"><i class="bi bi-calendar3"></i><span>{{ nextEvent.data.eventDate | formatDate }}</span></div>{% endif %}
+{% if nextEvent.data.startTime %}<div class="cosmos-hero-card__meta"><i class="bi bi-clock"></i><span>{{ nextEvent.data.startTime }}{% if nextEvent.data.endTime %} to {{ nextEvent.data.endTime }}{% endif %}</span></div>{% endif %}
+{% if nextEvent.data.location %}<div class="cosmos-hero-card__meta"><i class="bi bi-geo-alt"></i><span>{{ nextEvent.data.location }}</span></div>{% endif %}
+<div class="cosmos-hero-card__divider"></div>
+<div class="cosmos-hero-card__footer"><span class="cosmos-hero-card__tag">Free to attend</span><a href="{{ nextEvent.url }}" class="cosmos-hero-card__rsvp">RSVP &amp; details <i class="bi bi-arrow-right"></i></a></div>
+</div>
+{% else %}
+<div class="cosmos-hero-card">
+<div class="cosmos-hero-card__label">Why come along</div>
+<div class="cosmos-hero-card__stats">
+<div><span class="cosmos-hero-card__stat-value">Free</span><span class="cosmos-hero-card__stat-label">Always free to attend, no sign-up required</span></div>
+<div><span class="cosmos-hero-card__stat-value">Monthly</span><span class="cosmos-hero-card__stat-label">Regular meetups in your city</span></div>
+<div><span class="cosmos-hero-card__stat-value">All levels</span><span class="cosmos-hero-card__stat-label">From curious beginners to experienced devs</span></div>
+</div>
+<div class="cosmos-hero-card__divider"></div>
+<a href="https://lu.ma/localai" class="cosmos-hero-card__rsvp" target="_blank" rel="noopener">Browse events on lu.ma <i class="bi bi-arrow-right"></i></a>
+</div>
+{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
 
-Located on Dione, one of the largest moon's of Saturn, our club hosts regular get togethers.   
-Join us as we share our passion for our space home, whether gathering for meetings, contributing to the wiki and docs, reaching out to other moons, the possibilites are endless!
-
-
-<div>
-{% include "partials/homeCards.njk" %}
+<!-- ── ANNOUNCE STRIP ─────────────────────── -->
+<div class="cosmos-announce-strip">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap text-center">
+      <span class="cosmos-announce-strip__badge">Coming Up</span>
+      <span style="color:var(--color-text-muted);">Next meetup coming up, RSVP to secure your spot</span>
+      <a href="https://lu.ma/localai" class="cosmos-announce-strip__link" target="_blank" rel="noopener">
+        Register on lu.ma <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
 </div>
 
+<!-- ── AWARENESS ───────────────────────────── -->
+<section class="cosmos-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <p class="cosmos-section__label">What is Local AI?</p>
+        <h2 class="cosmos-section__title">AI you run yourself, on your own machine.</h2>
+        <p class="cosmos-section__lead">The same kind of AI that powers ChatGPT and Claude can run entirely on your own laptop or desktop. No internet connection, no subscription, no data leaving your computer. Most people have never heard this is even possible.</p>
+        <p class="cosmos-section__lead mt-3" style="font-size:0.95rem;">This group is for people who want to learn more about that. Whether you use cloud AI every day or have never tried any of it, you're welcome here.</p>
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <div class="cosmos-fact-list">
+          <div class="cosmos-fact-item">
+            <div class="cosmos-fact-item__icon"><i class="bi bi-wifi-off"></i></div>
+            <div>
+              <div class="cosmos-fact-item__title">It works without an internet connection</div>
+              <div class="cosmos-fact-item__body">Once it is set up on your computer, it runs entirely offline. No connection needed at all.</div>
+            </div>
+          </div>
+          <div class="cosmos-fact-item">
+            <div class="cosmos-fact-item__icon"><i class="bi bi-lock-fill"></i></div>
+            <div>
+              <div class="cosmos-fact-item__title">Your conversations stay on your machine</div>
+              <div class="cosmos-fact-item__body">Nothing is sent to any server. Not to the model makers, not to anyone. It never leaves your computer.</div>
+            </div>
+          </div>
+          <div class="cosmos-fact-item">
+            <div class="cosmos-fact-item__icon"><i class="bi bi-box-seam"></i></div>
+            <div>
+              <div class="cosmos-fact-item__title">The models are free and open source</div>
+              <div class="cosmos-fact-item__body">No subscription, no per-query fees. The models are openly published and anyone can use them.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% set text = "Register Now" %}
-{% set link = "https://example.com/register" %}
-{% set icon = "ticket-perforated" %}
-{% set style = "primary" %}
-{% include "partials/btn.njk" %}
+<!-- ── WHO IT'S FOR ───────────────────────── -->
+<section class="cosmos-section cosmos-section--alt">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-4">
+        <p class="cosmos-section__label">Who it's for</p>
+        <h2 class="cosmos-section__title">There's a place<br>for everyone here</h2>
+        <p class="cosmos-section__lead">Whether you write code for a living or you've never touched a terminal, you belong here.</p>
+      </div>
+      <div class="col-lg-8">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="cosmos-audience-card">
+              <div class="cosmos-audience-card__icon">
+                <i class="bi bi-code-square"></i>
+              </div>
+              <h4 class="cosmos-audience-card__title">Developers</h4>
+              <p class="cosmos-audience-card__body">Integrate local models into your stack. Build workflows without API costs or sending data to third-party services.</p>
+              <a href="/about/" class="cosmos-audience-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cosmos-audience-card">
+              <div class="cosmos-audience-card__icon">
+                <i class="bi bi-building"></i>
+              </div>
+              <h4 class="cosmos-audience-card__title">Businesses</h4>
+              <p class="cosmos-audience-card__body">Handle sensitive client data safely. Legal, healthcare, finance. Industries where sending data to ChatGPT simply is not an option.</p>
+              <a href="/about/" class="cosmos-audience-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="cosmos-audience-card">
+              <div class="cosmos-audience-card__icon">
+                <i class="bi bi-lightbulb-fill"></i>
+              </div>
+              <h4 class="cosmos-audience-card__title">Curious Beginners</h4>
+              <p class="cosmos-audience-card__body">Just AI-curious? No experience needed. Come along to a meetup and see what's possible on everyday hardware.</p>
+              <a href="/about/" class="cosmos-audience-card__link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMMUNITY CTA ──────────────────────── -->
+<section class="cosmos-section">
+  <div class="container">
+    <div class="cosmos-cta-section">
+      <div class="cosmos-cta-section__orb"></div>
+      <div class="position-relative" style="z-index:1;">
+        <p class="cosmos-cta-section__eyebrow">Part of xdeca.com</p>
+        <h2 class="cosmos-cta-section__title">Join the conversation</h2>
+        <p class="cosmos-cta-section__lead">Between meetups the community stays connected. Share what you're building, get help with your local AI setup, and stay across the latest open models.</p>
+        <div class="cosmos-cta-section__actions">
+          <a href="https://lu.ma/localai" class="btn btn-primary btn-lg cosmos-glow-btn" target="_blank" rel="noopener">
+            <i class="bi bi-calendar-event me-2"></i>Browse Events on lu.ma
+          </a>
+          <a href="/contact/" class="btn btn-lg cosmos-cta-section__ghost-btn">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LATEST POSTS ───────────────────────── -->
+<section class="cosmos-section cosmos-section--alt">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+      <div>
+        <p class="cosmos-section__label mb-1">From the blog</p>
+        <h2 class="cosmos-section__title mb-0">Guides &amp; Resources</h2>
+      </div>
+      <a href="/posts/" class="cosmos-view-all d-none d-md-inline-flex">
+        All posts <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+    {% set type = "preview" %}
+    {% include "partials/postsList.njk" %}
+
+<div><a href="/posts/" class="cosmos-view-all d-md-none mt-4">All posts <i class="bi bi-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<!-- ── UPCOMING EVENTS ────────────────────── -->
+<section class="cosmos-section">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+      <div>
+        <p class="cosmos-section__label mb-1">What's on</p>
+        <h2 class="cosmos-section__title mb-0">Upcoming Meetups</h2>
+      </div>
+      <a href="/events/" class="cosmos-view-all d-none d-md-inline-flex">
+        All events <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+    {% set type = "upcoming" %}
+    {% include "partials/eventsList.njk" %}
+
+<div><a href="/events/" class="cosmos-view-all d-md-none mt-4">All events <i class="bi bi-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ──────────────────────────── -->
+<section class="cosmos-section cosmos-section--alt">
+  <div class="container text-center">
+    <p class="cosmos-section__label">Ready to start?</p>
+    <h2 class="cosmos-section__title" style="max-width:580px;margin:0 auto 1rem;">Come along and see how it works</h2>
+    <p class="cosmos-section__lead mx-auto mb-4">Attend a meetup, browse the guides, or just say hello. No experience required, just curiosity.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="https://lu.ma/localai" class="btn btn-primary btn-lg cosmos-glow-btn" target="_blank" rel="noopener">
+        <i class="bi bi-calendar-event me-2"></i>Find an Event
+      </a>
+      <a href="/posts/" class="btn btn-outline-primary btn-lg">
+        <i class="bi bi-book me-2"></i>Read the Guides
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,23 +1,71 @@
 <div class="footer-wrapper">
-<div class="divider" aria-hidden="true"></div>
+  <div class="divider" aria-hidden="true"></div>
+  <footer class="py-5" id="footer-main">
+    <div class="container">
 
-<footer class="border-top py-4 mt-auto bg-black" id="footer-main">
-<br>
-<br>
-<div class="container d-flex flex-wrap justify-content-between align-items-center gap-4 text-light fs-5 fw-semibold">
-<div class="">
-© {{ global.currentYear }}
-<a href="/" class="text-decoration-none text-light">{{ site.title }}</a>
-</div>
-<div class="d-flex gap-3 flex-wrap">
-{% for item in navbar %}
-{% if item.footer %}
-<a href="{{ item.href }}" class="text-decoration-none text-light nav-link">
-{{ item.title }}
-</a>
-{% endif %}
-{% endfor %}
-</div>
-</div>
-</footer>
+      <!-- Top row -->
+      <div class="row g-5 mb-5">
+
+        <!-- Brand -->
+        <div class="col-lg-3">
+          <a href="/" class="d-inline-flex align-items-center gap-2 text-decoration-none mb-3">
+            <img src="{{ site.logo }}" alt="{{ site.title }}" width="36" height="36" class="rounded">
+            <span class="cosmos-footer__brand-name">{{ site.title }}</span>
+          </a>
+          <p class="cosmos-footer__tagline">
+            A community for running AI offline and completely privately on your own computer.
+            Part of <a href="https://xdeca.com" class="cosmos-footer__link" target="_blank" rel="noopener">xdeca.com</a>.
+          </p>
+        </div>
+
+        <!-- Community links -->
+        <div class="col-6 col-lg-2">
+          <h6 class="cosmos-footer__heading">Community</h6>
+          <ul class="list-unstyled cosmos-footer__links">
+            {% for item in navbar %}
+            {% if item.footer %}
+            <li>
+              <a href="{{ item.href }}" class="cosmos-footer__link">{{ item.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            <li><a href="https://lu.ma/localai" class="cosmos-footer__link" target="_blank" rel="noopener">Events on lu.ma</a></li>
+            <li><a href="https://xdeca.com" class="cosmos-footer__link" target="_blank" rel="noopener">xdeca.com</a></li>
+          </ul>
+        </div>
+
+        <!-- Focus areas -->
+        <div class="col-6 col-lg-2">
+          <h6 class="cosmos-footer__heading">Focus Areas</h6>
+          <ul class="list-unstyled cosmos-footer__links">
+            <li><span class="cosmos-footer__link">Ollama &amp; Local LLMs</span></li>
+            <li><span class="cosmos-footer__link">n8n Workflows</span></li>
+            <li><span class="cosmos-footer__link">VS Code + Local Models</span></li>
+            <li><span class="cosmos-footer__link">TTS / STT Tools</span></li>
+            <li><span class="cosmos-footer__link">AI Harnesses (Goose)</span></li>
+          </ul>
+        </div>
+
+        <!-- Cities -->
+        <div class="col-6 col-lg-2">
+          <h6 class="cosmos-footer__heading">Cities</h6>
+          <ul class="list-unstyled cosmos-footer__links">
+            <li><span class="cosmos-footer__link">Melbourne</span></li>
+            <li><span class="cosmos-footer__link">Sydney</span></li>
+            <li><span class="cosmos-footer__link">Adelaide</span></li>
+            <li><span class="cosmos-footer__link">Regional &amp; Online</span></li>
+          </ul>
+        </div>
+
+
+      </div>
+
+      <!-- Bottom row -->
+      <div class="cosmos-footer__bottom">
+        <span>© {{ global.currentYear }} Local AI Group · Part of <a href="https://xdeca.com" class="cosmos-footer__link" target="_blank" rel="noopener">xdeca.com</a></span>
+        <span>Not affiliated with any AI company.</span>
+      </div>
+
+    </div>
+  </footer>
 </div>
