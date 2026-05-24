@@ -227,6 +227,11 @@ fullWidth: true
   }
   schedTwirl();
 
+  // Fade in after 3 s (only if user hasn't already scrolled away)
+  setTimeout(function () {
+    if (hint && window.scrollY < 80) hint.style.opacity = '1';
+  }, 3000);
+
   // Fade out as user scrolls away
   window.addEventListener('scroll', function () {
     if (hint) hint.style.opacity = Math.max(0, 1 - window.scrollY / 160).toString();
