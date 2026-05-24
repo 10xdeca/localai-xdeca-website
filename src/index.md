@@ -7,66 +7,28 @@ fullWidth: true
 ---
 
 <!-- ── HERO ─────────────────────────────────── -->
-<section class="cosmos-hero">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <h1 class="cosmos-hero__headline">
-          AI that works offline and keeps everything private.
-        </h1>
-        <p class="cosmos-hero__sub">
-          Everything stays on your own computer. Works without internet, keeps your data completely private, and costs nothing to run. This is the community where you learn how.
-        </p>
-        <div class="cosmos-hero__ctas">
-          <a href="https://lu.ma/localai" class="btn btn-primary btn-lg cosmos-glow-btn" target="_blank" rel="noopener">
-            <i class="bi bi-calendar-event me-2"></i>See Upcoming Events
-          </a>
-          <a href="/about/" class="btn btn-outline-primary btn-lg">
-            About the Group
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-5 offset-lg-1 d-none d-lg-block">
-{% set nextEvent = collections.upcomingEvents | first %}
-{% if nextEvent %}
-<div class="cosmos-hero-card">
-<div class="cosmos-hero-card__label">Next meetup</div>
-<h3 class="cosmos-hero-card__title">{{ nextEvent.data.title }}</h3>
-{% if nextEvent.data.eventDate %}<div class="cosmos-hero-card__meta"><i class="bi bi-calendar3"></i><span>{{ nextEvent.data.eventDate | formatDate }}</span></div>{% endif %}
-{% if nextEvent.data.startTime %}<div class="cosmos-hero-card__meta"><i class="bi bi-clock"></i><span>{{ nextEvent.data.startTime }}{% if nextEvent.data.endTime %} to {{ nextEvent.data.endTime }}{% endif %}</span></div>{% endif %}
-{% if nextEvent.data.location %}<div class="cosmos-hero-card__meta"><i class="bi bi-geo-alt"></i><span>{{ nextEvent.data.location }}</span></div>{% endif %}
-<div class="cosmos-hero-card__divider"></div>
-<div class="cosmos-hero-card__footer"><span class="cosmos-hero-card__tag">Free to attend</span><a href="{{ nextEvent.url }}" class="cosmos-hero-card__rsvp">RSVP &amp; details <i class="bi bi-arrow-right"></i></a></div>
+<section class="cosmos-hero-pcb">
+<canvas class="pcb-canvas" id="enclosureCanvas"></canvas>
+<div class="hero-content">
+<h1 class="hero-main">The community for running AI on your own machine.</h1>
+<p class="hero-minor">Events, guides, and open discussion for anyone curious about local AI.</p>
 </div>
-{% else %}
-<div class="cosmos-hero-card">
-<div class="cosmos-hero-card__label">Why come along</div>
-<div class="cosmos-hero-card__stats">
-<div><span class="cosmos-hero-card__stat-value">Free</span><span class="cosmos-hero-card__stat-label">Always free to attend, no sign-up required</span></div>
-<div><span class="cosmos-hero-card__stat-value">Monthly</span><span class="cosmos-hero-card__stat-label">Regular meetups in your city</span></div>
-<div><span class="cosmos-hero-card__stat-value">All levels</span><span class="cosmos-hero-card__stat-label">From curious beginners to experienced devs</span></div>
+<div class="pcb-hero-space"></div>
+<div class="pcb-ctas">
+<a href="https://lu.ma/localai" class="pcb-cta" target="_blank" rel="noopener">
+<span class="pcb-cta__ref">SW1</span>
+<span class="pcb-cta__label">View Events</span>
+</a>
+<a href="/posts/" class="pcb-cta">
+<span class="pcb-cta__ref">SW2</span>
+<span class="pcb-cta__label">Check Out Resources</span>
+</a>
+<a href="/about/" class="pcb-cta">
+<span class="pcb-cta__ref">SW3</span>
+<span class="pcb-cta__label">Join Community</span>
+</a>
 </div>
-<div class="cosmos-hero-card__divider"></div>
-<a href="https://lu.ma/localai" class="cosmos-hero-card__rsvp" target="_blank" rel="noopener">Browse events on lu.ma <i class="bi bi-arrow-right"></i></a>
-</div>
-{% endif %}
-      </div>
-    </div>
-  </div>
 </section>
-
-<!-- ── ANNOUNCE STRIP ─────────────────────── -->
-<div class="cosmos-announce-strip">
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap text-center">
-      <span class="cosmos-announce-strip__badge">Coming Up</span>
-      <span style="color:var(--color-text-muted);">Next meetup coming up, RSVP to secure your spot</span>
-      <a href="https://lu.ma/localai" class="cosmos-announce-strip__link" target="_blank" rel="noopener">
-        Register on lu.ma <i class="bi bi-arrow-right"></i>
-      </a>
-    </div>
-  </div>
-</div>
 
 <!-- ── AWARENESS ───────────────────────────── -->
 <section class="cosmos-section">
