@@ -1029,7 +1029,7 @@ h1, h2, h3, h4, h5, h6,
 ───────────────────────────────────────────────── */
 
 .cosmos-cta-section {
-  background: var(--color-bg);
+  background: var(--color-surface-raised);
   border: 1px solid rgba(var(--color-primary-rgb), 0.2);
   border-radius: 0;
   padding: 5rem 3rem;
