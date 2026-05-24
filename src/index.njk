@@ -202,22 +202,33 @@ fullWidth: true
 
 <script>
 (function () {
-  function schedSpin() {
+  var hint = document.getElementById('heroScrollHint');
+  var spin = document.getElementById('heroScrollSpin');
+
+  // Click scrolls to the first section below the hero
+  if (hint) {
+    hint.addEventListener('click', function () {
+      var next = document.querySelector('.cosmos-hero-pcb + *');
+      if (next) next.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Occasional twirl (rotateY) every 3–8 s
+  function schedTwirl() {
     setTimeout(function () {
-      var el = document.getElementById('heroScrollSpin');
-      if (!el) return;
-      el.classList.add('do-spin');
-      el.addEventListener('animationend', function done() {
-        el.classList.remove('do-spin');
-        el.removeEventListener('animationend', done);
-        schedSpin();
+      if (!spin) return;
+      spin.classList.add('do-spin');
+      spin.addEventListener('animationend', function done() {
+        spin.classList.remove('do-spin');
+        spin.removeEventListener('animationend', done);
+        schedTwirl();
       });
     }, 2800 + Math.random() * 5200);
   }
-  schedSpin();
+  schedTwirl();
 
+  // Fade out as user scrolls away
   window.addEventListener('scroll', function () {
-    var hint = document.getElementById('heroScrollHint');
     if (hint) hint.style.opacity = Math.max(0, 1 - window.scrollY / 160).toString();
   }, { passive: true });
 }());
