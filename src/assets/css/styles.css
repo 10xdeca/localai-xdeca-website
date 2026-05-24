@@ -814,8 +814,8 @@ h1, h2, h3, h4, h5, h6,
 @keyframes hero-fade { to { opacity: 1; } }
 
 @media (max-width: 768px) {
-  .cosmos-hero-pcb { min-height: 100svh; gap: 2rem; }
-  .hero-content { padding: 1.5rem 1.5rem 0; }
+  .cosmos-hero-pcb { min-height: 100svh; justify-content: flex-start; padding-top: 15vh; gap: 3.5rem; }
+  .hero-content { padding: 0 1.5rem 0; }
   .pcb-ctas { gap: 1rem; padding: 0 1.25rem 2.5rem; }
   .pcb-cta { padding: 0.85rem 1.2rem; }
   .pcb-cta__label { font-size: 0.7rem; max-width: 110px; }
