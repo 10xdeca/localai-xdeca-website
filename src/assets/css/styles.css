@@ -14,6 +14,7 @@
   --color-primary: #077a6e;
   --color-primary-rgb: 7, 122, 110;
   --color-primary-dark: #055a50;
+  --color-accent: #b86a00;
 
   --color-bg: #f0faf8;
   --color-surface: #e2f5f2;
@@ -57,6 +58,7 @@
   --color-primary: #00c8b4;
   --color-primary-rgb: 0, 200, 180;
   --color-primary-dark: #00a898;
+  --color-accent: #f09020;
 
   --color-bg: #050e14;
   --color-surface: #071520;
@@ -259,8 +261,8 @@ h1, h2, h3, h4, h5, h6,
   width: 40px;
   height: 22px;
   border-radius: 11px;
-  background: rgba(var(--color-primary-rgb), 0.18);
-  border: 1px solid var(--color-primary);
+  background: rgba(128, 128, 128, 0.12);
+  border: 1px solid rgba(128, 128, 128, 0.35);
   position: relative;
   transition: background 0.35s, border-color 0.35s;
 }
@@ -269,7 +271,7 @@ h1, h2, h3, h4, h5, h6,
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: rgba(128, 128, 128, 0.65);
   position: absolute;
   top: 2px;
   left: 2px;
@@ -282,16 +284,19 @@ h1, h2, h3, h4, h5, h6,
 .cosmos-nav-events {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.72rem;
-  padding: 0.4rem 1rem;
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
+  height: 2.25rem;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
   text-decoration: none;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: background 0.2s, color 0.2s;
   flex-shrink: 0;
 }
-.cosmos-nav-events:hover { background: var(--color-primary); color: var(--color-bg); }
+.cosmos-nav-events:hover { background: var(--color-accent); color: var(--color-bg); }
 
 #nav-mobile { border-top: 1px solid var(--color-border); }
 
