@@ -30,6 +30,12 @@
   --footer-bg: #111118;
   --cta-bg: #0D1020;
 
+  /* PCB hero */
+  --hero-pcb-bg: #FFFFFF;
+  --hero-text-primary: #1C1C28;
+  --hero-text-secondary: rgba(28, 28, 40, 0.58);
+  --hero-cta-bg: rgba(255, 255, 255, 0.88);
+
   /* Bootstrap overrides */
   --bs-primary: #2ABFB7;
   --bs-primary-rgb: 42, 191, 183;
@@ -70,6 +76,12 @@
   --navbar-bg: rgba(10, 13, 20, 0.9);
   --footer-bg: #07080F;
   --cta-bg: #07080F;
+
+  /* PCB hero */
+  --hero-pcb-bg: #0a0e18;
+  --hero-text-primary: #EEF0F8;
+  --hero-text-secondary: rgba(238, 240, 248, 0.5);
+  --hero-cta-bg: rgba(10, 14, 24, 0.85);
 
   /* Bootstrap overrides */
   --bs-primary: #3DD6CD;
@@ -616,7 +628,7 @@ h1, h2, h3, h4, h5, h6,
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  background: #0a0e18;
+  background: var(--hero-pcb-bg);
 }
 
 /* Top gradient behind hero text */
@@ -640,6 +652,10 @@ h1, h2, h3, h4, h5, h6,
   z-index: 1;
   pointer-events: none;
 }
+
+/* Light mode: no gradients, plain white canvas */
+[data-bs-theme="light"] .cosmos-hero-pcb::before,
+[data-bs-theme="light"] .cosmos-hero-pcb::after { display: none; }
 
 .pcb-canvas {
   position: absolute;
@@ -673,7 +689,7 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   gap: 0.3rem;
   padding: 1rem 1.6rem;
-  background: rgba(10, 14, 24, 0.85);
+  background: var(--hero-cta-bg);
   border: 1px solid rgba(var(--color-primary-rgb), 0.32);
   text-decoration: none;
   cursor: pointer;
@@ -750,7 +766,7 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 500;
   letter-spacing: -0.025em;
   line-height: 1.2;
-  color: #EEF0F8;
+  color: var(--hero-text-primary);
   margin: 0 0 0.8rem;
   opacity: 0;
   transform: translateY(10px);
@@ -759,7 +775,7 @@ h1, h2, h3, h4, h5, h6,
 
 .hero-minor {
   font-size: 0.95rem;
-  color: rgba(238, 240, 248, 0.5);
+  color: var(--hero-text-secondary);
   line-height: 1.65;
   margin: 0;
   opacity: 0;
