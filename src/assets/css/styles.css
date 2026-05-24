@@ -32,7 +32,6 @@
   --hero-text-primary: #0a3330;
   --hero-text-secondary: #5a9e98;
   --hero-cta-bg: rgba(240, 250, 248, 0.88);
-  --color-pcb-rgb: 0, 100, 160;
 
   /* Bootstrap overrides */
   --bs-primary: #077a6e;
@@ -76,7 +75,6 @@
   --hero-text-primary: #e0f7f5;
   --hero-text-secondary: #4a8a84;
   --hero-cta-bg: rgba(5, 14, 20, 0.85);
-  --color-pcb-rgb: 40, 155, 215;
 
   /* Bootstrap overrides */
   --bs-primary: #00c8b4;

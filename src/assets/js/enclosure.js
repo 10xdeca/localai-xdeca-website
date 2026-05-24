@@ -11,7 +11,7 @@
 
   function rgb() {
     return getComputedStyle(document.documentElement)
-      .getPropertyValue('--color-pcb-rgb').trim() || '40,155,215';
+      .getPropertyValue('--color-primary-rgb').trim() || '42,191,183';
   }
 
   function nodeScale() {
@@ -123,6 +123,7 @@
   function frame() {
     ctx.clearRect(0, 0, W, H);
     const c = rgb();
+    const ns = nodeScale();
 
     // ── Background dot-grid ──
     ctx.fillStyle = `rgba(${c},0.018)`;
@@ -195,7 +196,6 @@
     });
 
     // ── Nodes ──
-    const ns = nodeScale();
     nodes.forEach(n => {
       n.ph += 0.016;
       const p = 0.65 + 0.35 * Math.sin(n.ph);
@@ -251,19 +251,19 @@
       const py = tr.y1 + (tr.y2 - tr.y1) * pulse.t;
 
       const g = ctx.createRadialGradient(px, py, 0, px, py, 22);
-      g.addColorStop(0, `rgba(${c},0.38)`); g.addColorStop(1, `rgba(${c},0)`);
+      g.addColorStop(0, `rgba(${c},${0.38 * ns})`); g.addColorStop(1, `rgba(${c},0)`);
       ctx.beginPath(); ctx.arc(px, py, 22, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
 
       const tf = Math.max(0, Math.min(1, pulse.t - pulse.d * 0.10));
       const tx = tr.x1 + (tr.x2 - tr.x1) * tf;
       const ty = tr.y1 + (tr.y2 - tr.y1) * tf;
       const tg = ctx.createLinearGradient(tx, ty, px, py);
-      tg.addColorStop(0, `rgba(${c},0)`); tg.addColorStop(1, `rgba(${c},0.88)`);
+      tg.addColorStop(0, `rgba(${c},0)`); tg.addColorStop(1, `rgba(${c},${0.88 * ns})`);
       ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(px, py);
       ctx.strokeStyle = tg; ctx.lineWidth = 2.5; ctx.stroke();
 
       ctx.beginPath(); ctx.arc(px, py, 3, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${c},0.88)`; ctx.fill();
+      ctx.fillStyle = `rgba(${c},${0.88 * ns})`; ctx.fill();
       return true;
     });
 
