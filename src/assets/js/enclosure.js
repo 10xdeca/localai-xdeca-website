@@ -14,6 +14,10 @@
       .getPropertyValue('--color-primary-rgb').trim() || '42,191,183';
   }
 
+  function nodeScale() {
+    return document.documentElement.getAttribute('data-bs-theme') === 'light' ? 0.45 : 1.0;
+  }
+
   function measureComps() {
     const hr = canvas.parentElement.getBoundingClientRect();
     compBoxes = Array.from(document.querySelectorAll('.pcb-cta')).map(el => {
@@ -191,19 +195,20 @@
     });
 
     // ── Nodes ──
+    const ns = nodeScale();
     nodes.forEach(n => {
       n.ph += 0.016;
       const p = 0.65 + 0.35 * Math.sin(n.ph);
       if (n.via) {
         ctx.beginPath(); ctx.arc(n.x, n.y, 5.5, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${c},${0.40 * p})`; ctx.lineWidth = 1.3; ctx.stroke();
+        ctx.strokeStyle = `rgba(${c},${0.40 * p * ns})`; ctx.lineWidth = 1.3; ctx.stroke();
         ctx.beginPath(); ctx.arc(n.x, n.y, 2.2, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${c},${0.22 * p})`; ctx.lineWidth = 0.7; ctx.stroke();
+        ctx.strokeStyle = `rgba(${c},${0.22 * p * ns})`; ctx.lineWidth = 0.7; ctx.stroke();
       } else {
         ctx.beginPath(); ctx.arc(n.x, n.y, 3, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${c},${0.40 * p})`; ctx.fill();
+        ctx.fillStyle = `rgba(${c},${0.40 * p * ns})`; ctx.fill();
         ctx.beginPath(); ctx.arc(n.x, n.y, 5.5, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${c},0.10)`; ctx.lineWidth = 0.7; ctx.stroke();
+        ctx.strokeStyle = `rgba(${c},${0.10 * ns})`; ctx.lineWidth = 0.7; ctx.stroke();
       }
     });
 
