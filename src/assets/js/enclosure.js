@@ -11,7 +11,7 @@
 
   function rgb() {
     return getComputedStyle(document.documentElement)
-      .getPropertyValue('--color-primary-rgb').trim() || '42,191,183';
+      .getPropertyValue('--color-pcb-rgb').trim() || '40,155,215';
   }
 
   function nodeScale() {
