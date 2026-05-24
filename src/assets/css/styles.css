@@ -654,6 +654,8 @@ h1, h2, h3, h4, h5, h6,
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
   overflow: hidden;
   background: var(--hero-pcb-bg);
 }
@@ -693,8 +695,6 @@ h1, h2, h3, h4, h5, h6,
   z-index: 0;
 }
 
-.pcb-hero-space { flex: 1; }
-
 /* CTA row */
 .pcb-ctas {
   position: relative;
@@ -704,7 +704,7 @@ h1, h2, h3, h4, h5, h6,
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 0 2rem 5rem;
+  padding: 0 2rem 2.5rem;
   width: 100%;
   max-width: 900px;
 }
@@ -783,14 +783,14 @@ h1, h2, h3, h4, h5, h6,
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 680px;
+  max-width: 780px;
   text-align: center;
-  padding: 5rem 2rem 2rem;
+  padding: 2rem 2rem 0;
 }
 
 .hero-main {
   font-family: 'Orbitron', monospace;
-  font-size: clamp(1.4rem, 2.8vw, 2.3rem);
+  font-size: clamp(1.7rem, 3.8vw, 3.2rem);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.15;
@@ -802,7 +802,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .hero-minor {
-  font-size: 0.95rem;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
   color: var(--hero-text-secondary);
   line-height: 1.65;
   margin: 0;
@@ -814,11 +814,15 @@ h1, h2, h3, h4, h5, h6,
 @keyframes hero-fade { to { opacity: 1; } }
 
 @media (max-width: 768px) {
-  .cosmos-hero-pcb { min-height: 100svh; }
-  .hero-content { padding: 3.5rem 1.5rem 2rem; }
-  .pcb-ctas { gap: 1rem; padding: 0 1.25rem 3.5rem; }
+  .cosmos-hero-pcb { min-height: 100svh; gap: 2rem; }
+  .hero-content { padding: 1.5rem 1.5rem 0; }
+  .pcb-ctas { gap: 1rem; padding: 0 1.25rem 2.5rem; }
   .pcb-cta { padding: 0.85rem 1.2rem; }
   .pcb-cta__label { font-size: 0.7rem; max-width: 110px; }
+}
+
+@media (max-width: 480px) {
+  .toggle-label { display: none; }
 }
 
 /* ─────────────────────────────────────────────────
