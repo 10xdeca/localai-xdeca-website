@@ -863,9 +863,6 @@ h1, h2, h3, h4, h5, h6,
   .pcb-cta__label { font-size: 0.7rem; max-width: 110px; }
 }
 
-@media (max-width: 480px) {
-  .toggle-label { display: none; }
-}
 
 /* ─────────────────────────────────────────────────
    HOMEPAGE — SECTIONS
