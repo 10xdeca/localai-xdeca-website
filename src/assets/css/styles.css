@@ -891,6 +891,11 @@ h1, h2, h3, h4, h5, h6,
 .cosmos-section { padding: 5.5rem 0; overflow: hidden; }
 .cosmos-section--alt { background-color: var(--color-bg); }
 .cosmos-section--raised { background-color: var(--color-surface-raised); }
+.cosmos-section--dots {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
 
 .cosmos-section__label {
   font-family: 'Share Tech Mono', monospace;

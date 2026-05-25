@@ -192,8 +192,8 @@ fullWidth: true
   </div>
 </section>
 
-<!-- ── LATEST POSTS ───────────────────────── -->
-<section class="cosmos-section cosmos-section--alt">
+<!-- ── POSTS + EVENTS ─────────────────────── -->
+<section class="cosmos-section cosmos-section--dots">
   <div class="container">
     <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
       <div>
@@ -206,14 +206,10 @@ fullWidth: true
     </div>
     {% set type = "preview" %}
     {% include "partials/postsList.njk" %}
+    <div><a href="/posts/" class="cosmos-view-all d-md-none mt-4">All posts <i class="bi bi-arrow-right"></i></a></div>
 
-<div><a href="/posts/" class="cosmos-view-all d-md-none mt-4">All posts <i class="bi bi-arrow-right"></i></a></div>
-  </div>
-</section>
+    <hr class="cosmos-section-divider my-5" />
 
-<!-- ── UPCOMING EVENTS ────────────────────── -->
-<section class="cosmos-section">
-  <div class="container">
     <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
       <div>
         <p class="cosmos-section__label mb-1">What's on</p>
@@ -225,8 +221,7 @@ fullWidth: true
     </div>
     {% set type = "upcoming" %}
     {% include "partials/eventsList.njk" %}
-
-<div><a href="/events/" class="cosmos-view-all d-md-none mt-4">All events <i class="bi bi-arrow-right"></i></a></div>
+    <div><a href="/events/" class="cosmos-view-all d-md-none mt-4">All events <i class="bi bi-arrow-right"></i></a></div>
   </div>
 </section>
 
