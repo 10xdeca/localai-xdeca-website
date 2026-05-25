@@ -763,6 +763,21 @@ h1, h2, h3, h4, h5, h6,
 .pcb-cta:hover::after { background: rgba(var(--color-primary-rgb), 0.60); }
 .pcb-cta:active { transform: translateY(0); box-shadow: 0 0 12px rgba(var(--color-primary-rgb), 0.18); }
 
+.pcb-cta--primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 22px rgba(var(--color-primary-rgb), 0.35);
+}
+.pcb-cta--primary .pcb-cta__ref,
+.pcb-cta--primary .pcb-cta__label { color: var(--color-bg); }
+.pcb-cta--primary:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 36px rgba(var(--color-primary-rgb), 0.55);
+}
+.pcb-cta--primary::before,
+.pcb-cta--primary::after { background: rgba(var(--color-primary-rgb), 0.50); }
+
 .pcb-cta__ref {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.48rem;
