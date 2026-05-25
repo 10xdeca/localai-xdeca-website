@@ -9,9 +9,22 @@
     <!-- Desktop nav links -->
     <div class="d-none d-md-flex align-items-center gap-1">
       {% for item in navbar %}
+      {% if item.children %}
+      <div class="dropdown">
+        <a class="cosmos-nav-link dropdown-toggle" href="{{ item.href }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ item.title }}
+        </a>
+        <ul class="dropdown-menu cosmos-dropdown-menu">
+          {% for child in item.children %}
+          <li><a class="cosmos-dropdown-item{% if page.url == child.href %} active{% endif %}" href="{{ child.href }}">{{ child.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% else %}
       <a class="cosmos-nav-link{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
         {{ item.title }}
       </a>
+      {% endif %}
       {% endfor %}
     </div>
 
@@ -40,6 +53,13 @@
       <a class="cosmos-nav-link{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
         {{ item.title }}
       </a>
+      {% if item.children %}
+      {% for child in item.children %}
+      <a class="cosmos-nav-link cosmos-nav-link--sub{% if page.url == child.href %} active{% endif %}" href="{{ child.href }}">
+        {{ child.title }}
+      </a>
+      {% endfor %}
+      {% endif %}
       {% endfor %}
       <a href="https://lu.ma/localai" class="btn btn-primary btn-sm mt-2 align-self-start" target="_blank" rel="noopener">
         <i class="bi bi-calendar-event me-2"></i>Browse Events

@@ -25,11 +25,9 @@
     <div class="footer-col">
       <h6 class="cosmos-footer__heading">Focus Areas</h6>
       <ul class="cosmos-footer__links">
-        <li><span class="cosmos-footer__link">Ollama &amp; Local LLMs</span></li>
-        <li><span class="cosmos-footer__link">n8n Workflows</span></li>
-        <li><span class="cosmos-footer__link">VS Code + Local Models</span></li>
-        <li><span class="cosmos-footer__link">TTS / STT Tools</span></li>
-        <li><span class="cosmos-footer__link">AI Harnesses (Goose)</span></li>
+        {% for item in navbar %}{% if item.children %}{% for child in item.children %}
+        <li><a href="{{ child.href }}" class="cosmos-footer__link">{{ child.title }}</a></li>
+        {% endfor %}{% endif %}{% endfor %}
       </ul>
     </div>
 

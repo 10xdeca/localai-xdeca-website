@@ -5,6 +5,18 @@
     "footer": true
   },
   {
+    "title": "Focus Areas",
+    "href": "#",
+    "footer": false,
+    "children": [
+      { "title": "Models", "href": "#" },
+      { "title": "Coding Harnesses", "href": "#" },
+      { "title": "Connect Applications", "href": "#" },
+      { "title": "TTS & STT", "href": "#" },
+      { "title": "Image Generation", "href": "#" }
+    ]
+  },
+  {
     "title": "About",
     "href": "/about",
     "footer": true

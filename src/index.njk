@@ -200,13 +200,62 @@ fullWidth: true
         <p class="cosmos-section__label mb-1">From the blog</p>
         <h2 class="cosmos-section__title mb-0">Guides &amp; Resources</h2>
       </div>
-      <a href="/posts/" class="cosmos-view-all d-none d-md-inline-flex">
-        All posts <i class="bi bi-arrow-right"></i>
+      <a href="#" class="cosmos-view-all d-none d-md-inline-flex">
+        All focus areas <i class="bi bi-arrow-right"></i>
       </a>
     </div>
-    {% set type = "preview" %}
-    {% include "partials/postsList.njk" %}
-    <div><a href="/posts/" class="cosmos-view-all d-md-none mt-4">All posts <i class="bi bi-arrow-right"></i></a></div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <a href="#" class="cosmos-focus-card">
+          <i class="bi bi-rocket-takeoff-fill cosmos-focus-card__icon"></i>
+          <div class="cosmos-focus-card__body">
+            <p class="cosmos-focus-card__label">Beginners</p>
+            <h5 class="cosmos-focus-card__title">Get started guide</h5>
+            <span class="cosmos-focus-card__link">Read more <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="#" class="cosmos-focus-card">
+          <i class="bi bi-terminal-fill cosmos-focus-card__icon"></i>
+          <div class="cosmos-focus-card__body">
+            <p class="cosmos-focus-card__label">Coding Harnesses</p>
+            <h5 class="cosmos-focus-card__title">Open Coding Harness</h5>
+            <span class="cosmos-focus-card__link">Read more <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="#" class="cosmos-focus-card">
+          <i class="bi bi-mic-fill cosmos-focus-card__icon"></i>
+          <div class="cosmos-focus-card__body">
+            <p class="cosmos-focus-card__label">TTS &amp; STT</p>
+            <h5 class="cosmos-focus-card__title">Text to Speech and Speech to Text</h5>
+            <span class="cosmos-focus-card__link">Read more <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="#" class="cosmos-focus-card">
+          <i class="bi bi-hdd-rack-fill cosmos-focus-card__icon"></i>
+          <div class="cosmos-focus-card__body">
+            <p class="cosmos-focus-card__label">Models</p>
+            <h5 class="cosmos-focus-card__title">Home labbing</h5>
+            <span class="cosmos-focus-card__link">Read more <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <a href="#" class="cosmos-focus-card cosmos-focus-card--all">
+          <i class="bi bi-grid-fill cosmos-focus-card__icon"></i>
+          <div class="cosmos-focus-card__body">
+            <p class="cosmos-focus-card__label">All areas</p>
+            <h5 class="cosmos-focus-card__title">View all focus areas</h5>
+            <span class="cosmos-focus-card__link">Explore <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
 
     <hr class="cosmos-section-divider my-5" />
 

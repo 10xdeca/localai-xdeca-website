@@ -213,6 +213,38 @@ h1, h2, h3, h4, h5, h6,
 .cosmos-nav-link:hover { color: var(--color-primary); }
 .cosmos-nav-link.active { color: var(--color-primary); }
 
+.cosmos-dropdown-menu {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 0.4rem 0;
+  min-width: 190px;
+}
+
+.cosmos-dropdown-item {
+  display: block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.cosmos-dropdown-item:hover,
+.cosmos-dropdown-item.active {
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.06);
+}
+
+.cosmos-nav-link--sub {
+  padding-left: 1.75rem;
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
 .cosmos-nav-icon-btn {
   background: transparent;
   border: 1px solid var(--color-border);
@@ -1645,6 +1677,79 @@ h1, h2, h3, h4, h5, h6,
   margin-top: auto;
 }
 .cosmos-post-card__link:hover { gap: 0.65rem; color: var(--color-primary-dark); }
+
+.cosmos-focus-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  height: 100%;
+  position: relative;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.cosmos-focus-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 30px; height: 1px;
+  background: var(--color-primary);
+}
+
+.cosmos-focus-card:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.45);
+  background: var(--color-surface);
+}
+
+.cosmos-focus-card__icon {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  opacity: 0.75;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.cosmos-focus-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.cosmos-focus-card__label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+}
+
+.cosmos-focus-card__title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.cosmos-focus-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  color: var(--color-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-top: auto;
+  transition: gap 0.15s ease;
+}
+
+.cosmos-focus-card:hover .cosmos-focus-card__link { gap: 0.65rem; }
 
 /* ─────────────────────────────────────────────────
    EMPTY STATES
