@@ -47,6 +47,14 @@
   --bs-link-hover-color: #055a50;
   --bs-card-bg: #ffffff;
   --bs-card-border-color: rgba(7, 122, 110, 0.14);
+
+  /* Category accents */
+  --color-events: #b91c1c;
+  --color-events-rgb: 185, 28, 28;
+  --color-resources: #1a5fb4;
+  --color-resources-rgb: 26, 95, 180;
+  --color-chat: #6d28d9;
+  --color-chat-rgb: 109, 40, 217;
 }
 
 /* ─────────────────────────────────────────────────
@@ -90,6 +98,14 @@
   --bs-link-hover-color: #3ffff0;
   --bs-card-bg: #071520;
   --bs-card-border-color: rgba(0, 200, 180, 0.12);
+
+  /* Category accents */
+  --color-events: #f87171;
+  --color-events-rgb: 248, 113, 113;
+  --color-resources: #60a5fa;
+  --color-resources-rgb: 96, 165, 250;
+  --color-chat: #a78bfa;
+  --color-chat-rgb: 167, 139, 250;
 }
 
 /* ─────────────────────────────────────────────────
@@ -816,6 +832,34 @@ h1, h2, h3, h4, h5, h6,
 .pcb-cta--primary::before,
 .pcb-cta--primary::after { background: rgba(var(--color-primary-rgb), 0.50); }
 
+/* Category-coloured CTA variants */
+.pcb-cta--events .pcb-cta__ref,
+.pcb-cta--events .pcb-cta__label { color: var(--color-events); }
+.pcb-cta--events { border-color: rgba(var(--color-events-rgb), 0.32); }
+.pcb-cta--events::before,
+.pcb-cta--events::after { background: rgba(var(--color-events-rgb), 0.20); }
+.pcb-cta--events:hover { border-color: var(--color-events); box-shadow: 0 0 32px rgba(var(--color-events-rgb), 0.28), 0 0 10px rgba(var(--color-events-rgb), 0.14); }
+.pcb-cta--events:hover::before,
+.pcb-cta--events:hover::after { background: rgba(var(--color-events-rgb), 0.60); }
+
+.pcb-cta--resources .pcb-cta__ref,
+.pcb-cta--resources .pcb-cta__label { color: var(--color-resources); }
+.pcb-cta--resources { border-color: rgba(var(--color-resources-rgb), 0.32); }
+.pcb-cta--resources::before,
+.pcb-cta--resources::after { background: rgba(var(--color-resources-rgb), 0.20); }
+.pcb-cta--resources:hover { border-color: var(--color-resources); box-shadow: 0 0 32px rgba(var(--color-resources-rgb), 0.28), 0 0 10px rgba(var(--color-resources-rgb), 0.14); }
+.pcb-cta--resources:hover::before,
+.pcb-cta--resources:hover::after { background: rgba(var(--color-resources-rgb), 0.60); }
+
+.pcb-cta--chat .pcb-cta__ref,
+.pcb-cta--chat .pcb-cta__label { color: var(--color-chat); }
+.pcb-cta--chat { border-color: rgba(var(--color-chat-rgb), 0.32); }
+.pcb-cta--chat::before,
+.pcb-cta--chat::after { background: rgba(var(--color-chat-rgb), 0.20); }
+.pcb-cta--chat:hover { border-color: var(--color-chat); box-shadow: 0 0 32px rgba(var(--color-chat-rgb), 0.28), 0 0 10px rgba(var(--color-chat-rgb), 0.14); }
+.pcb-cta--chat:hover::before,
+.pcb-cta--chat:hover::after { background: rgba(var(--color-chat-rgb), 0.60); }
+
 .pcb-cta__ref {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.48rem;
@@ -1271,6 +1315,21 @@ h1, h2, h3, h4, h5, h6,
   transition: gap 0.15s ease;
 }
 .cosmos-audience-card__link:hover { gap: 0.55rem; }
+
+.cosmos-audience-card--events::before  { background: var(--color-events); }
+.cosmos-audience-card--events .cosmos-audience-card__icon { color: var(--color-events); }
+.cosmos-audience-card--events:hover { border-color: rgba(var(--color-events-rgb), 0.4); }
+.cosmos-audience-card--events .cosmos-audience-card__link { color: var(--color-events); }
+
+.cosmos-audience-card--resources::before  { background: var(--color-resources); }
+.cosmos-audience-card--resources .cosmos-audience-card__icon { color: var(--color-resources); }
+.cosmos-audience-card--resources:hover { border-color: rgba(var(--color-resources-rgb), 0.4); }
+.cosmos-audience-card--resources .cosmos-audience-card__link { color: var(--color-resources); }
+
+.cosmos-audience-card--chat::before  { background: var(--color-chat); }
+.cosmos-audience-card--chat .cosmos-audience-card__icon { color: var(--color-chat); }
+.cosmos-audience-card--chat:hover { border-color: rgba(var(--color-chat-rgb), 0.4); }
+.cosmos-audience-card--chat .cosmos-audience-card__link { color: var(--color-chat); }
 
 /* ─────────────────────────────────────────────────
    CTA SECTION
