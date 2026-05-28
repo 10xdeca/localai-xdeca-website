@@ -1,13 +1,14 @@
 [
   {
-    "title": "Home",
-    "href": "/",
+    "title": "About",
+    "href": "/about/",
     "footer": true
   },
   {
     "title": "Resources",
     "href": "/resources/",
     "footer": true,
+    "accent": "resources",
     "children": [
       { "title": "Where to Start", "href": "/resources/getting-started/" },
       { "title": "Models", "href": "/resources/models/" },
@@ -18,13 +19,9 @@
     ]
   },
   {
-    "title": "About",
-    "href": "/about",
-    "footer": true
-  },
-  {
-    "title": "Contact",
-    "href": "/contact",
-    "footer": true
+    "title": "Chat",
+    "href": "/community/",
+    "footer": true,
+    "accent": "chat"
   }
 ]

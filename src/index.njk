@@ -1,6 +1,6 @@
 ---
 layout: index.njk
-title: Local AI Group
+title: Local AI
 description: A community for running AI offline and completely privately on your own computer. No internet required, no subscriptions, no data sharing.
 permalink: "/"
 fullWidth: true
@@ -10,7 +10,7 @@ fullWidth: true
 <section class="cosmos-hero-pcb">
 <canvas class="pcb-canvas" id="enclosureCanvas"></canvas>
 <div class="hero-content">
-<h1 class="hero-main">Local AI Group</h1>
+<h1 class="hero-main">Local AI</h1>
 <p class="hero-minor">We run events, maintain curated resource lists, and host open discussion for running AI on your own device, offline, privately, and without token costs.</p>
 </div>
 <div class="pcb-ctas">
@@ -184,10 +184,10 @@ fullWidth: true
   }
   schedTwirl();
 
-  // Fade in after 3 s (only if user hasn't already scrolled away)
+  // Fade in after 1 s (only if user hasn't already scrolled away)
   setTimeout(function () {
     if (hint && window.scrollY < 80) hint.style.opacity = '1';
-  }, 3000);
+  }, 1000);
 
   // Fade out as user scrolls away
   window.addEventListener('scroll', function () {
