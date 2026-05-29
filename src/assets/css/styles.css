@@ -966,7 +966,7 @@ h1, h2, h3, h4, h5, h6,
 .hero-scroll-hint::before {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   width: 4.5rem;
   height: 4.5rem;
   border: 1px solid rgba(var(--color-primary-rgb), 0.45);
@@ -998,10 +998,10 @@ h1, h2, h3, h4, h5, h6,
 
 .hero-scroll-label {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.35em;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.4em;
   color: var(--color-primary);
-  opacity: 0.9;
   text-transform: uppercase;
 }
 
@@ -1545,6 +1545,41 @@ h1, h2, h3, h4, h5, h6,
 .cosmos-page-hero .container {
   position: relative;
   z-index: 1;
+}
+.cosmos-page-hero--events {
+  background-image:
+    radial-gradient(circle, rgba(var(--color-events-rgb), 0.22) 1px, transparent 1px),
+    linear-gradient(rgba(var(--color-events-rgb), 0.04), rgba(var(--color-events-rgb), 0.04));
+  background-size: 28px 28px, 100%;
+}
+
+.cosmos-back-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+.cosmos-back-link:hover { color: var(--color-primary); }
+.cosmos-back-link--events { color: var(--color-events); opacity: 0.8; }
+.cosmos-back-link--events:hover { color: var(--color-events); opacity: 1; }
+
+.cosmos-event-detail-meta i { color: var(--color-events); opacity: 0.75; }
+
+.cosmos-glow-btn--events {
+  background-color: var(--color-events) !important;
+  border-color: var(--color-events) !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(var(--color-events-rgb), 0.3);
+}
+.cosmos-glow-btn--events:hover {
+  background-color: var(--color-events) !important;
+  border-color: var(--color-events) !important;
+  box-shadow: 0 0 36px rgba(var(--color-events-rgb), 0.5);
 }
 
 .cosmos-superbridge-explainer {

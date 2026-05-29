@@ -1,30 +1,41 @@
 ---
 layout: base.njk
 ---
-<div class="h-100 card card-body p-4 border-primary border-opacity-50">
-<div>
-<h1>{{title}}</h1>
 
-{% if not hideEventDetails %}
-{% include "partials/event-details.njk" %}
-{% endif %}
+<!-- ── EVENT HERO ────────────────────────── -->
+<section class="cosmos-page-hero cosmos-page-hero--events">
+  <div class="container">
+    <a href="/events/" class="cosmos-back-link cosmos-back-link--events"><i class="bi bi-arrow-left me-1"></i>All Events</a>
+    <h1 class="cosmos-section__title cosmos-section__title--events mb-3 mt-2">{{ title }}</h1>
+    {% if not hideEventDetails %}
+    <div class="cosmos-event-detail-meta">
+      {% include "partials/event-details.njk" %}
+    </div>
+    {% endif %}
+  </div>
+</section>
 
-{{ content | safe }}
+<!-- ── CONTENT ────────────────────────────── -->
+<section class="cosmos-section">
+  <div class="container">
 
-{%- if recapPost %}
-<p class="mt-4">Read the <a href="{{recapPost}}">recap post</a>!</p>
-{%- endif %}
+    {{ content | safe }}
 
-{%- if gallery and not (content | hasGallery) %}
-{% set path = gallery | stripLeadingSlash %}
-{% include "partials/gallery.njk" %}
-{%- endif %}
-</div>
-<div class="d-flex justify-content-center gap-3 my-4">
-{% include "partials/btn.njk" %}
-<a href="/events/" class="btn btn-outline-primary">
-<i class="bi bi-calendar me-2"></i>All Events
-</a>
-</div>
-</div>
+    {%- if recapPost %}
+    <p class="mt-4">Read the <a href="{{ recapPost }}" style="color:var(--color-events);">recap post</a>.</p>
+    {%- endif %}
 
+    {%- if gallery and not (content | hasGallery) %}
+    {% set path = gallery | stripLeadingSlash %}
+    {% include "partials/gallery.njk" %}
+    {%- endif %}
+
+    <div class="d-flex gap-3 mt-5 flex-wrap">
+      <a href="/events/" class="btn btn-outline-primary"><i class="bi bi-arrow-left me-2"></i>All Events</a>
+      <a href="https://lu.ma/localai" class="btn cosmos-glow-btn cosmos-glow-btn--events" target="_blank" rel="noopener">
+        <i class="bi bi-calendar-plus me-2"></i>Follow on lu.ma
+      </a>
+    </div>
+
+  </div>
+</section>
