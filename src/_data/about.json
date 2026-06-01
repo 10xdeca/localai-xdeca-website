@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title": "About Local AI",
+    "lead": "A community for anyone interested in running AI on their own machine, offline, privately, and without token costs."
+  },
+  "whatIsLocalAI": {
+    "title": "What is Local AI?",
+    "lead": "You can run AI entirely on your laptop or computer, without internet, for free, and without data leaving your device."
+  },
+  "facts": [
+    {
+      "icon": "bi-wifi-off",
+      "title": "It works without an internet connection",
+      "body": "Once it is set up on your computer, it runs entirely offline. No connection needed at all."
+    },
+    {
+      "icon": "bi-lock-fill",
+      "title": "Your conversations stay on your machine",
+      "body": "Nothing is sent to any server. Not to the model makers, not to anyone. It never leaves your computer."
+    },
+    {
+      "icon": "bi-box-seam",
+      "title": "The models are free and open source",
+      "body": "No subscription, no per-query fees. The models are openly published and anyone can use them."
+    }
+  ],
+  "whatWeDo": {
+    "title": "What Local AI does",
+    "cards": [
+      {
+        "icon": "bi-calendar-event-fill",
+        "title": "Events",
+        "accent": "events",
+        "body": "Casual meetups, workshops for beginners and advanced hobbyists, and demo nights where people show what they're building. In person across Australian cities and online.",
+        "link": {
+          "label": "View upcoming events",
+          "href": "https://lu.ma/localai",
+          "external": true
+        }
+      },
+      {
+        "icon": "bi-bookmarks-fill",
+        "title": "Curated Resources",
+        "accent": "resources",
+        "body": "Maintained lists of the best tools, models, projects, and links across all local AI focus areas. Kept up to date as the space moves, so you don't have to dig.",
+        "link": {
+          "label": "Browse resources",
+          "href": "/resources/"
+        }
+      },
+      {
+        "icon": "bi-chat-dots-fill",
+        "title": "Online Discussions",
+        "accent": "chat",
+        "body": "Between meetups the community stays connected via chat. Share what you're building, get help with your setup, and stay across what's new in the open model ecosystem.",
+        "link": {
+          "label": "Join the chat",
+          "href": "/community/"
+        }
+      }
+    ]
+  },
+  "whoItsFor": {
+    "title": "Everyone,\nat every level",
+    "lead": "There's a lot written about local AI online but it's scattered, assumes you know the lingo, and there's nowhere to discuss it in person. This is that place.",
+    "cards": [
+      {
+        "icon": "bi-lightbulb-fill",
+        "title": "Complete Newcomers",
+        "body": "Never run AI locally before? Neither had most of us. Come to a meetup and see what's possible on the laptop you already own. No jargon, no prerequisites."
+      },
+      {
+        "icon": "bi-cpu",
+        "title": "Hobbyists & Tinkerers",
+        "body": "Already running models at home, testing new releases, or building your own setup? This is the in-person version of those Reddit threads."
+      },
+      {
+        "icon": "bi-code-square",
+        "title": "Developers & Builders",
+        "body": "Integrating local models into your work or projects? No API costs, no data leaving the machine. Connect with others building on the open model ecosystem."
+      }
+    ]
+  }
+}

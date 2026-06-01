@@ -9,16 +9,16 @@ fullWidth: true
 <!-- ── PAGE HERO ───────────────────────────── -->
 <section class="cosmos-page-hero cosmos-page-hero--events">
   <div class="container">
-    <p class="cosmos-section__label" style="color:var(--color-events);">Meetups</p>
-    <h1 class="cosmos-section__title cosmos-section__title--events mb-2">Events</h1>
-    <p class="cosmos-section__lead" style="max-width:none;">Casual catchups, workshops, and demo nights. In person across Australian cities and online.</p>
+    <p class="cosmos-section__label" style="color:var(--color-events);">{{ eventsPage.hero.label }}</p>
+    <h1 class="cosmos-section__title cosmos-section__title--events mb-2">{{ eventsPage.hero.title }}</h1>
+    <p class="cosmos-section__lead" style="max-width:none;">{{ eventsPage.hero.lead }}</p>
   </div>
 </section>
 
 <!-- ── UPCOMING ───────────────────────────── -->
 <section class="cosmos-section cosmos-section--dots-events">
   <div class="container">
-    <h2 class="cosmos-section__title cosmos-section__title--events mb-4">Upcoming</h2>
+    <h2 class="cosmos-section__title cosmos-section__title--events mb-4">{{ eventsPage.upcoming.title }}</h2>
     {% set type = "upcoming" %}
     {% include "partials/eventsList.njk" %}
   </div>
@@ -27,7 +27,7 @@ fullWidth: true
 <!-- ── PAST ──────────────────────────────── -->
 <section class="cosmos-section cosmos-section--raised">
   <div class="container">
-    <h2 class="cosmos-section__title mb-4">Past Events</h2>
+    <h2 class="cosmos-section__title mb-4">{{ eventsPage.past.title }}</h2>
     {% set type = "past" %}
     {% include "partials/eventsList.njk" %}
   </div>
@@ -36,9 +36,9 @@ fullWidth: true
 <!-- ── CTA ───────────────────────────────── -->
 <section class="cosmos-section cosmos-section--alt">
   <div class="container text-center">
-    <p class="cosmos-section__lead mx-auto mb-4">Get notified when new events are announced.</p>
-    <a href="https://lu.ma/localai" class="btn btn-lg cosmos-glow-btn cosmos-glow-btn--events" target="_blank" rel="noopener">
-      <i class="bi bi-calendar-plus me-2"></i>Follow on lu.ma
+    <p class="cosmos-section__lead mx-auto mb-4">{{ eventsPage.cta.lead }}</p>
+    <a href="{{ eventsPage.cta.button.href }}" class="btn btn-lg cosmos-glow-btn cosmos-glow-btn--events" target="_blank" rel="noopener">
+      <i class="bi {{ eventsPage.cta.button.icon }} me-2"></i>{{ eventsPage.cta.button.label }}
     </a>
   </div>
 </section>

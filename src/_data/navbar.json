@@ -9,6 +9,7 @@
     "href": "/resources/",
     "footer": true,
     "accent": "resources",
+    "icon": "bi-book",
     "children": [
       { "title": "Where to Start", "href": "/resources/getting-started/" },
       { "title": "Models", "href": "/resources/models/" },
@@ -22,6 +23,7 @@
     "title": "Chat",
     "href": "/community/",
     "footer": true,
-    "accent": "chat"
+    "accent": "chat",
+    "icon": "bi-chat-dots"
   }
 ]

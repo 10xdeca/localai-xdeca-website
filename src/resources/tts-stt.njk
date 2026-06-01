@@ -4,13 +4,16 @@ title: Text to Speech and Speech to Text
 description: Local voice AI. Transcribe audio with Whisper, generate natural speech with Kokoro and others, all running entirely on your own hardware.
 permalink: /resources/tts-stt/
 fullWidth: true
+areaSlug: tts-stt
 ---
+
+{% set area = focusAreas.areas | find("slug", areaSlug) %}
 
 <section class="cosmos-page-hero">
   <div class="container">
-    <p class="cosmos-section__label">Focus area</p>
-    <h1 class="cosmos-section__title mb-2">Text to Speech and Speech to Text</h1>
-    <p class="cosmos-section__lead" style="max-width:none;">Local voice AI. Transcribe audio with Whisper, generate natural speech with Kokoro and others, all running entirely on your own hardware.</p>
+    <p class="cosmos-section__label">{{ area.label }}</p>
+    <h1 class="cosmos-section__title mb-2">{{ area.title }}</h1>
+    <p class="cosmos-section__lead" style="max-width:none;">{{ area.lead }}</p>
   </div>
 </section>
 

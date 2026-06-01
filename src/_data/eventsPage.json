@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "label": "Meetups",
+    "title": "Events",
+    "lead": "Casual catchups, workshops, and demo nights. In person across Australian cities and online."
+  },
+  "upcoming": {
+    "title": "Upcoming"
+  },
+  "past": {
+    "title": "Past Events"
+  },
+  "cta": {
+    "lead": "Get notified when new events are announced.",
+    "button": {
+      "label": "Follow on lu.ma",
+      "href": "https://lu.ma/localai",
+      "icon": "bi-calendar-plus"
+    }
+  }
+}

@@ -4,13 +4,16 @@ title: Models
 description: What is out there, who makes it, and where to find it. Links to HuggingFace, model makers, leaderboards, and anything worth knowing about the open model ecosystem.
 permalink: /resources/models/
 fullWidth: true
+areaSlug: models
 ---
+
+{% set area = focusAreas.areas | find("slug", areaSlug) %}
 
 <section class="cosmos-page-hero">
   <div class="container">
-    <p class="cosmos-section__label">Focus area</p>
-    <h1 class="cosmos-section__title mb-2">Models</h1>
-    <p class="cosmos-section__lead" style="max-width:none;">What is out there, who makes it, and where to find it. Links to HuggingFace, model makers, leaderboards, and anything worth knowing about the open model ecosystem.</p>
+    <p class="cosmos-section__label">{{ area.label }}</p>
+    <h1 class="cosmos-section__title mb-2">{{ area.title }}</h1>
+    <p class="cosmos-section__lead" style="max-width:none;">{{ area.lead }}</p>
   </div>
 </section>
 

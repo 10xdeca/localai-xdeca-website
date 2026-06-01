@@ -4,13 +4,16 @@ title: Where to Start
 description: The best beginner resources for understanding what local AI is, picking a model, and getting your first chat running on your own machine.
 permalink: /resources/getting-started/
 fullWidth: true
+areaSlug: getting-started
 ---
+
+{% set area = focusAreas.areas | find("slug", areaSlug) %}
 
 <section class="cosmos-page-hero">
   <div class="container">
-    <p class="cosmos-section__label">Beginners</p>
-    <h1 class="cosmos-section__title mb-2">Where to Start</h1>
-    <p class="cosmos-section__lead" style="max-width:none;">The best beginner resources for understanding what local AI is, picking a model, and getting your first chat running on your own machine.</p>
+    <p class="cosmos-section__label">{{ area.label }}</p>
+    <h1 class="cosmos-section__title mb-2">{{ area.title }}</h1>
+    <p class="cosmos-section__lead" style="max-width:none;">{{ area.lead }}</p>
   </div>
 </section>
 

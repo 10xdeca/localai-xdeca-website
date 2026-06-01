@@ -4,13 +4,16 @@ title: Home Labbing
 description: Setting up a dedicated machine or multi-machine system at home. Run models as a local server, share access across your network, and build a proper local AI setup.
 permalink: /resources/home-labbing/
 fullWidth: true
+areaSlug: home-labbing
 ---
+
+{% set area = focusAreas.areas | find("slug", areaSlug) %}
 
 <section class="cosmos-page-hero">
   <div class="container">
-    <p class="cosmos-section__label">Focus area</p>
-    <h1 class="cosmos-section__title mb-2">Home Labbing</h1>
-    <p class="cosmos-section__lead" style="max-width:none;">Setting up a dedicated machine or multi-machine system at home. Run models as a local server, share access across your network, and build a proper local AI setup.</p>
+    <p class="cosmos-section__label">{{ area.label }}</p>
+    <h1 class="cosmos-section__title mb-2">{{ area.title }}</h1>
+    <p class="cosmos-section__lead" style="max-width:none;">{{ area.lead }}</p>
   </div>
 </section>
 

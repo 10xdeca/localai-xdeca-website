@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "Local AI",
+    "lead": "We run events, maintain curated resource lists, and host open discussion for running AI on your own device, offline, privately, and without token costs.",
+    "ctas": [
+      { "label": "Upcoming Events", "href": "/events/", "accent": "events", "icon": "bi-calendar-event" },
+      { "label": "View Resources", "href": "/resources/", "accent": "resources", "icon": "bi-book" },
+      { "label": "Online Chat", "href": "/community/", "accent": "chat", "icon": "bi-chat-dots" }
+    ]
+  },
+  "whatIsLocalAI": {
+    "title": "What is Local AI?",
+    "lead": "You can run AI entirely on your laptop or computer, without internet, for free, and without data leaving your device.",
+    "button": {
+      "label": "Find out more",
+      "href": "/about/"
+    }
+  },
+  "events": {
+    "title": "Upcoming Meetups",
+    "viewAllLabel": "All events",
+    "viewAllHref": "/events/"
+  },
+  "resources": {
+    "title": "Curated Resources",
+    "viewAllLabel": "All focus areas",
+    "viewAllHref": "/resources/"
+  },
+  "chat": {
+    "title": "Join the conversation",
+    "lead": "Between meetups the community stays connected. Share what you're building, get help with your local AI setup, and stay across the latest open models.",
+    "button": {
+      "label": "Chat with the Community",
+      "href": "/community/",
+      "icon": "bi-chat-dots"
+    }
+  }
+}

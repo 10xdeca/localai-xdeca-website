@@ -1,0 +1,45 @@
+{
+  "tagline": "A community for running AI offline and completely privately on your own computer.",
+  "parentSite": {
+    "label": "xdeca.com",
+    "href": "https://xdeca.com"
+  },
+  "columns": [
+    {
+      "heading": "Local AI",
+      "headingHref": "/",
+      "links": [
+        { "label": "About", "href": "/about/" },
+        { "label": "Events", "href": "/events/", "icon": "bi-calendar-event" },
+        { "label": "lu.ma/localai", "href": "https://lu.ma/localai", "external": true },
+        { "label": "xdeca.com", "href": "https://xdeca.com", "external": true }
+      ]
+    },
+    {
+      "heading": "Resources",
+      "headingHref": "/resources/",
+      "headingIcon": "bi-book",
+      "headingAccent": "resources",
+      "fromNavbar": true
+    },
+    {
+      "heading": "Chat",
+      "headingHref": "/community/",
+      "headingIcon": "bi-chat-dots",
+      "headingAccent": "chat",
+      "links": [
+        { "label": "Matrix", "href": "#", "icon": "bi-grid-3x3-gap-fill" },
+        { "label": "Telegram", "href": "#", "icon": "bi-telegram" },
+        { "label": "Discord", "href": "#", "icon": "bi-discord" },
+        { "label": "WhatsApp", "href": "#", "icon": "bi-whatsapp" },
+        { "label": "Signal", "href": "#", "icon": "bi-shield-fill-check" }
+      ]
+    }
+  ],
+  "copyright": "Local AI",
+  "copyrightParent": {
+    "label": "xdeca.com",
+    "href": "https://xdeca.com"
+  },
+  "disclaimer": "Not affiliated with any AI company."
+}

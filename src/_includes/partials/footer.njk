@@ -4,47 +4,40 @@
     <div class="footer-brand">
       <a href="/" class="cosmos-footer__brand-name">{{ site.title }}</a>
       <p class="cosmos-footer__tagline">
-        A community for running AI offline and completely privately on your own computer.
-        Part of <a href="https://xdeca.com" class="cosmos-footer__link" target="_blank" rel="noopener">xdeca.com</a>.
+        {{ footer.tagline }}
+        Part of <a href="{{ footer.parentSite.href }}" class="cosmos-footer__link" target="_blank" rel="noopener">{{ footer.parentSite.label }}</a>.
       </p>
     </div>
 
+    {% for col in footer.columns %}
     <div class="footer-col">
-      <h6 class="cosmos-footer__heading">Community</h6>
+      <h6 class="cosmos-footer__heading">
+        <a href="{{ col.headingHref }}" class="cosmos-footer__heading-link{% if col.headingAccent %} cosmos-footer__heading-link--{{ col.headingAccent }}{% endif %}">
+          {% if col.headingIcon %}<i class="bi {{ col.headingIcon }} me-1"></i>{% endif %}{{ col.heading }}
+        </a>
+      </h6>
       <ul class="cosmos-footer__links">
-        {% for item in navbar %}
-        {% if item.footer %}
-        <li><a href="{{ item.href }}" class="cosmos-footer__link">{{ item.title }}</a></li>
+        {% if col.fromNavbar %}
+          {% for item in navbar %}{% if item.children %}{% for child in item.children %}
+          <li><a href="{{ child.href }}" class="cosmos-footer__link">{{ child.title }}</a></li>
+          {% endfor %}{% endif %}{% endfor %}
+        {% else %}
+          {% for link in col.links %}
+          <li>
+            <a href="{{ link.href }}" class="cosmos-footer__link"{% if link.external %} target="_blank" rel="noopener"{% endif %}>
+              {% if link.icon %}<i class="bi {{ link.icon }} me-1"></i>{% endif %}{{ link.label }}
+            </a>
+          </li>
+          {% endfor %}
         {% endif %}
-        {% endfor %}
-        <li><a href="https://lu.ma/localai" class="cosmos-footer__link" target="_blank" rel="noopener">Events on lu.ma</a></li>
-        <li><a href="https://xdeca.com" class="cosmos-footer__link" target="_blank" rel="noopener">xdeca.com</a></li>
       </ul>
     </div>
-
-    <div class="footer-col">
-      <h6 class="cosmos-footer__heading">Focus Areas</h6>
-      <ul class="cosmos-footer__links">
-        {% for item in navbar %}{% if item.children %}{% for child in item.children %}
-        <li><a href="{{ child.href }}" class="cosmos-footer__link">{{ child.title }}</a></li>
-        {% endfor %}{% endif %}{% endfor %}
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h6 class="cosmos-footer__heading">Cities</h6>
-      <ul class="cosmos-footer__links">
-        <li><span class="cosmos-footer__link">Melbourne</span></li>
-        <li><span class="cosmos-footer__link">Sydney</span></li>
-        <li><span class="cosmos-footer__link">Adelaide</span></li>
-        <li><span class="cosmos-footer__link">Regional &amp; Online</span></li>
-      </ul>
-    </div>
+    {% endfor %}
 
   </footer>
 
   <div class="footer-bottom">
-    <span>© {{ global.currentYear }} Local AI · Part of <a href="https://xdeca.com" class="cosmos-footer__link" target="_blank" rel="noopener">xdeca.com</a></span>
-    <span>Not affiliated with any AI company.</span>
+    <span>© {{ global.currentYear }} {{ footer.copyright }} · Part of <a href="{{ footer.copyrightParent.href }}" class="cosmos-footer__link" target="_blank" rel="noopener">{{ footer.copyrightParent.label }}</a></span>
+    <span>{{ footer.disclaimer }}</span>
   </div>
 </div>

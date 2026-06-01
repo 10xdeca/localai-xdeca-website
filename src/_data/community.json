@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "label": "Stay connected",
+    "title": "Join the community chat",
+    "lead": "Share what you're building, get help with your local AI setup, and stay across the latest open models."
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "lead": "We use Superbridge to connect five different messaging apps into one group. Pick whichever platform you're already on, and your messages will reach everyone on all the others."
+  },
+  "platforms": [
+    {
+      "icon": "bi-telegram",
+      "name": "Telegram",
+      "qr": "https://engage.electronworkshop.com.au/media/images/tg-hf.png",
+      "joinHref": "#"
+    },
+    {
+      "icon": "bi-discord",
+      "name": "Discord",
+      "qr": "https://engage.electronworkshop.com.au/media/images/screenshot_2026-04-18_at_2.06.46pm.png",
+      "joinHref": "#"
+    },
+    {
+      "icon": "bi-whatsapp",
+      "name": "WhatsApp",
+      "comingSoon": true,
+      "joinHref": "#"
+    },
+    {
+      "icon": "bi-shield-fill-check",
+      "name": "Signal",
+      "qr": "https://engage.electronworkshop.com.au/media/images/screenshot_2026-04-18_at_2.07.33pm.png",
+      "joinHref": "#"
+    },
+    {
+      "icon": "bi-grid-3x3-gap-fill",
+      "name": "Matrix",
+      "comingSoon": true,
+      "joinHref": "#"
+    }
+  ],
+  "newsletter": {
+    "label": "Stay in the loop",
+    "title": "Get the newsletter",
+    "lead": "Occasional updates on upcoming events, new guides, and what's happening in the local AI space. No spam. Unsubscribe any time.",
+    "placeholder": "your@email.com",
+    "buttonLabel": "Subscribe",
+    "actionHref": "#"
+  }
+}

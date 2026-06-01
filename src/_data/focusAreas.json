@@ -1,0 +1,64 @@
+{
+  "page": {
+    "label": "Focus areas",
+    "title": "Curated Resources",
+    "lead": "Maintained lists of the best tools, projects, models, and links across all local AI focus areas. Kept up to date as the space moves."
+  },
+  "areas": [
+    {
+      "slug": "getting-started",
+      "label": "Beginners",
+      "title": "Where to Start",
+      "lead": "New to local AI? The best beginner resources for understanding what local AI is, picking a model, and getting your first chat running on your own machine.",
+      "icon": "bi-rocket-takeoff-fill",
+      "href": "/resources/getting-started/",
+      "linkText": "Get started",
+      "featured": true
+    },
+    {
+      "slug": "models",
+      "label": "Focus area",
+      "title": "Models",
+      "lead": "What is out there, who makes it, and where to find it. Links to HuggingFace, model makers, leaderboards, and anything worth knowing about the open model ecosystem.",
+      "icon": "bi-box-seam",
+      "href": "/resources/models/",
+      "linkText": "Explore models"
+    },
+    {
+      "slug": "coding-harnesses",
+      "label": "Focus area",
+      "title": "Coding Harnesses",
+      "lead": "Open source tools for writing code with a local model. No API costs, no data sent anywhere. Links to projects, setup resources, and comparisons across the main options.",
+      "icon": "bi-terminal-fill",
+      "href": "/resources/coding-harnesses/",
+      "linkText": "Explore Coding Harnesses"
+    },
+    {
+      "slug": "connect-applications",
+      "label": "Focus area",
+      "title": "Connect Applications",
+      "lead": "Tools and projects for connecting local models to other apps, workflows, and services. Run AI as a local API and plug it into the things you already use.",
+      "icon": "bi-plug-fill",
+      "href": "/resources/connect-applications/",
+      "linkText": "Explore connections"
+    },
+    {
+      "slug": "tts-stt",
+      "label": "Focus area",
+      "title": "Text to Speech and Speech to Text",
+      "lead": "Local voice AI. Transcribe audio with Whisper, generate natural speech with Kokoro and others, all running entirely on your own hardware.",
+      "icon": "bi-mic-fill",
+      "href": "/resources/tts-stt/",
+      "linkText": "Explore voice AI"
+    },
+    {
+      "slug": "home-labbing",
+      "label": "Focus area",
+      "title": "Home Labbing",
+      "lead": "Setting up a dedicated machine or multi-machine system at home. Run models as a local server, share access across your network, and build a proper local AI setup.",
+      "icon": "bi-hdd-rack-fill",
+      "href": "/resources/home-labbing/",
+      "linkText": "Explore Home Labbing"
+    }
+  ]
+}

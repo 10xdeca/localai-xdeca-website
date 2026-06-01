@@ -4,13 +4,16 @@ title: Coding Harnesses
 description: Open source tools for writing code with a local model. No API costs, no data sent anywhere. Links to projects, setup resources, and comparisons across the main options.
 permalink: /resources/coding-harnesses/
 fullWidth: true
+areaSlug: coding-harnesses
 ---
+
+{% set area = focusAreas.areas | find("slug", areaSlug) %}
 
 <section class="cosmos-page-hero">
   <div class="container">
-    <p class="cosmos-section__label">Focus area</p>
-    <h1 class="cosmos-section__title mb-2">Coding Harnesses</h1>
-    <p class="cosmos-section__lead" style="max-width:none;">Open source tools for writing code with a local model. No API costs, no data sent anywhere. Links to projects, setup resources, and comparisons across the main options.</p>
+    <p class="cosmos-section__label">{{ area.label }}</p>
+    <h1 class="cosmos-section__title mb-2">{{ area.title }}</h1>
+    <p class="cosmos-section__lead" style="max-width:none;">{{ area.lead }}</p>
   </div>
 </section>
 

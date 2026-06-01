@@ -10,19 +10,15 @@ fullWidth: true
 <section class="cosmos-hero-pcb">
 <canvas class="pcb-canvas" id="enclosureCanvas"></canvas>
 <div class="hero-content">
-<h1 class="hero-main">Local AI</h1>
-<p class="hero-minor">We run events, maintain curated resource lists, and host open discussion for running AI on your own device, offline, privately, and without token costs.</p>
+<h1 class="hero-main">{{ home.hero.title }}</h1>
+<p class="hero-minor">{{ home.hero.lead }}</p>
 </div>
 <div class="pcb-ctas">
-<a href="/events/" class="pcb-cta pcb-cta--events">
-<span class="pcb-cta__label"><i class="bi bi-calendar-event me-1"></i>Upcoming Events</span>
+{% for cta in home.hero.ctas %}
+<a href="{{ cta.href }}" class="pcb-cta pcb-cta--{{ cta.accent }}">
+<span class="pcb-cta__label"><i class="bi {{ cta.icon }} me-1"></i>{{ cta.label }}</span>
 </a>
-<a href="/resources/" class="pcb-cta pcb-cta--resources">
-<span class="pcb-cta__label"><i class="bi bi-book me-1"></i>View Resources</span>
-</a>
-<a href="/community/" class="pcb-cta pcb-cta--chat">
-<span class="pcb-cta__label"><i class="bi bi-chat-dots me-1"></i>Online Chat</span>
-</a>
+{% endfor %}
 </div>
 <div class="hero-scroll-hint" id="heroScrollHint">
   <span class="hero-scroll-label">SCROLL</span>
@@ -37,9 +33,9 @@ fullWidth: true
 <!-- ── WHAT IS LOCAL AI ──────────────────────── -->
 <section class="cosmos-section cosmos-section--raised">
   <div class="container">
-    <h2 class="cosmos-section__title">What is Local AI?</h2>
-    <p class="cosmos-section__lead">You can run AI entirely on your laptop or computer, without internet, for free, and without data leaving your device.</p>
-    <a href="/about/" class="btn btn-outline-primary mt-2">Find out more <i class="bi bi-arrow-right ms-1"></i></a>
+    <h2 class="cosmos-section__title">{{ home.whatIsLocalAI.title }}</h2>
+    <p class="cosmos-section__lead">{{ home.whatIsLocalAI.lead }}</p>
+    <a href="{{ home.whatIsLocalAI.button.href }}" class="btn btn-outline-primary mt-2">{{ home.whatIsLocalAI.button.label }} <i class="bi bi-arrow-right ms-1"></i></a>
   </div>
 </section>
 
@@ -48,15 +44,15 @@ fullWidth: true
   <div class="container">
     <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
       <div>
-        <h2 class="cosmos-section__title cosmos-section__title--events mb-0"><i class="bi bi-calendar-event me-2"></i>Upcoming Meetups</h2>
+        <h2 class="cosmos-section__title cosmos-section__title--events mb-0"><i class="bi bi-calendar-event me-2"></i>{{ home.events.title }}</h2>
       </div>
-      <a href="/events/" class="cosmos-view-all cosmos-view-all--events d-none d-md-inline-flex">
-        All events <i class="bi bi-arrow-right"></i>
+      <a href="{{ home.events.viewAllHref }}" class="cosmos-view-all cosmos-view-all--events d-none d-md-inline-flex">
+        {{ home.events.viewAllLabel }} <i class="bi bi-arrow-right"></i>
       </a>
     </div>
     {% set type = "upcoming" %}
     {% include "partials/eventsList.njk" %}
-    <div><a href="/events/" class="cosmos-view-all cosmos-view-all--events d-md-none mt-4">All events <i class="bi bi-arrow-right"></i></a></div>
+    <div><a href="{{ home.events.viewAllHref }}" class="cosmos-view-all cosmos-view-all--events d-md-none mt-4">{{ home.events.viewAllLabel }} <i class="bi bi-arrow-right"></i></a></div>
   </div>
 </section>
 
@@ -65,75 +61,27 @@ fullWidth: true
   <div class="container">
     <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
       <div>
-        <h2 class="cosmos-section__title cosmos-section__title--resources mb-0"><i class="bi bi-book me-2"></i>Curated Resources</h2>
+        <h2 class="cosmos-section__title cosmos-section__title--resources mb-0"><i class="bi bi-book me-2"></i>{{ home.resources.title }}</h2>
       </div>
-      <a href="/resources/" class="cosmos-view-all cosmos-view-all--resources d-none d-md-inline-flex">
-        All focus areas <i class="bi bi-arrow-right"></i>
+      <a href="{{ home.resources.viewAllHref }}" class="cosmos-view-all cosmos-view-all--resources d-none d-md-inline-flex">
+        {{ home.resources.viewAllLabel }} <i class="bi bi-arrow-right"></i>
       </a>
     </div>
     <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-6">
+      {% for area in focusAreas.areas %}
       <div class="col">
-        <a href="/resources/getting-started/" class="cosmos-focus-card cosmos-focus-card--featured">
-          <i class="bi bi-rocket-takeoff-fill cosmos-focus-card__icon"></i>
+        <a href="{{ area.href }}" class="cosmos-focus-card{% if area.featured %} cosmos-focus-card--featured{% endif %}">
+          <i class="bi {{ area.icon }} cosmos-focus-card__icon"></i>
           <div class="cosmos-focus-card__body">
-            <h5 class="cosmos-focus-card__title">Where to start</h5>
-            <p class="cosmos-focus-card__desc">New to local AI? The best beginner resources for picking a model and getting your first chat running, all in one place.</p>
-            <span class="cosmos-focus-card__link">Get started <i class="bi bi-arrow-right"></i></span>
+            <h5 class="cosmos-focus-card__title">{{ area.title }}</h5>
+            <p class="cosmos-focus-card__desc">{{ area.lead }}</p>
+            <span class="cosmos-focus-card__link">{{ area.linkText }} <i class="bi bi-arrow-right"></i></span>
           </div>
         </a>
       </div>
-      <div class="col">
-        <a href="/resources/coding-harnesses/" class="cosmos-focus-card">
-          <i class="bi bi-terminal-fill cosmos-focus-card__icon"></i>
-          <div class="cosmos-focus-card__body">
-            <h5 class="cosmos-focus-card__title">Coding Harness</h5>
-            <p class="cosmos-focus-card__desc">Write code with a local model using open source tools like Aider or Continue. No API costs, no data sent anywhere.</p>
-            <span class="cosmos-focus-card__link">Explore Coding Harnesses <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="/resources/tts-stt/" class="cosmos-focus-card">
-          <i class="bi bi-mic-fill cosmos-focus-card__icon"></i>
-          <div class="cosmos-focus-card__body">
-            <h5 class="cosmos-focus-card__title">Text to Speech and Speech to Text</h5>
-            <p class="cosmos-focus-card__desc">Run Whisper for transcription and Kokoro for natural-sounding speech, entirely on your own hardware.</p>
-            <span class="cosmos-focus-card__link">Explore voice AI <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="/resources/models/" class="cosmos-focus-card">
-          <i class="bi bi-box-seam cosmos-focus-card__icon"></i>
-          <div class="cosmos-focus-card__body">
-            <h5 class="cosmos-focus-card__title">Models</h5>
-            <p class="cosmos-focus-card__desc">News, comparisons, and resources on open models. Links to HuggingFace, model makers, and where to find what's worth running.</p>
-            <span class="cosmos-focus-card__link">Explore models <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="/resources/home-labbing/" class="cosmos-focus-card">
-          <i class="bi bi-hdd-rack-fill cosmos-focus-card__icon"></i>
-          <div class="cosmos-focus-card__body">
-            <h5 class="cosmos-focus-card__title">Home Labbing</h5>
-            <p class="cosmos-focus-card__desc">Set up a dedicated machine or multi-machine system at home. Run models as a local server and share access across your network.</p>
-            <span class="cosmos-focus-card__link">Explore Home Labbing <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="/resources/" class="cosmos-focus-card cosmos-focus-card--all">
-          <i class="bi bi-grid-fill cosmos-focus-card__icon"></i>
-          <div class="cosmos-focus-card__body">
-            <h5 class="cosmos-focus-card__title">View all focus areas</h5>
-            <p class="cosmos-focus-card__desc">Browse everything we cover across models, tools, voice, and more.</p>
-            <span class="cosmos-focus-card__link">Explore all <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </a>
-      </div>
+      {% endfor %}
     </div>
-    <div><a href="/resources/" class="cosmos-view-all cosmos-view-all--resources d-md-none mt-4">All focus areas <i class="bi bi-arrow-right"></i></a></div>
+    <div><a href="{{ home.resources.viewAllHref }}" class="cosmos-view-all cosmos-view-all--resources d-md-none mt-4">{{ home.resources.viewAllLabel }} <i class="bi bi-arrow-right"></i></a></div>
   </div>
 </section>
 
@@ -142,11 +90,11 @@ fullWidth: true
   <div class="container">
     <div class="cosmos-cta-section cosmos-cta-section--chat">
       <div class="position-relative" style="z-index:1;">
-        <h2 class="cosmos-cta-section__title cosmos-section__title--chat"><i class="bi bi-chat-dots me-2"></i>Join the conversation</h2>
-        <p class="cosmos-cta-section__lead">Between meetups the community stays connected. Share what you're building, get help with your local AI setup, and stay across the latest open models.</p>
+        <h2 class="cosmos-cta-section__title cosmos-section__title--chat"><i class="bi {{ home.chat.button.icon }} me-2"></i>{{ home.chat.title }}</h2>
+        <p class="cosmos-cta-section__lead">{{ home.chat.lead }}</p>
         <div class="cosmos-cta-section__actions">
-          <a href="/community/" class="btn btn-lg cosmos-glow-btn cosmos-glow-btn--chat">
-            <i class="bi bi-chat-dots me-2"></i>Chat with the Community
+          <a href="{{ home.chat.button.href }}" class="btn btn-lg cosmos-glow-btn cosmos-glow-btn--chat">
+            <i class="bi {{ home.chat.button.icon }} me-2"></i>{{ home.chat.button.label }}
           </a>
         </div>
       </div>
@@ -159,7 +107,6 @@ fullWidth: true
   var hint = document.getElementById('heroScrollHint');
   var spin = document.getElementById('heroScrollSpin');
 
-  // Click scrolls to the first section below the hero
   if (hint) {
     hint.addEventListener('click', function () {
       var next = document.querySelector('.cosmos-hero-pcb + *');
@@ -167,7 +114,6 @@ fullWidth: true
     });
   }
 
-  // Occasional twirl (rotateY) every 3–8 s
   function schedTwirl() {
     setTimeout(function () {
       if (!spin) return;
@@ -181,12 +127,10 @@ fullWidth: true
   }
   schedTwirl();
 
-  // Fade in after 1 s (only if user hasn't already scrolled away)
   setTimeout(function () {
     if (hint && window.scrollY < 80) hint.style.opacity = '1';
   }, 1000);
 
-  // Fade out as user scrolls away
   window.addEventListener('scroll', function () {
     if (hint) hint.style.opacity = Math.max(0, 1 - window.scrollY / 160).toString();
   }, { passive: true });

@@ -4,13 +4,16 @@ title: Connect Applications
 description: Tools and projects for connecting local models to other apps, workflows, and services. Run AI as a local API and plug it into the things you already use.
 permalink: /resources/connect-applications/
 fullWidth: true
+areaSlug: connect-applications
 ---
+
+{% set area = focusAreas.areas | find("slug", areaSlug) %}
 
 <section class="cosmos-page-hero">
   <div class="container">
-    <p class="cosmos-section__label">Focus area</p>
-    <h1 class="cosmos-section__title mb-2">Connect Applications</h1>
-    <p class="cosmos-section__lead" style="max-width:none;">Tools and projects for connecting local models to other apps, workflows, and services. Run AI as a local API and plug it into the things you already use.</p>
+    <p class="cosmos-section__label">{{ area.label }}</p>
+    <h1 class="cosmos-section__title mb-2">{{ area.title }}</h1>
+    <p class="cosmos-section__lead" style="max-width:none;">{{ area.lead }}</p>
   </div>
 </section>
 

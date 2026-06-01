@@ -413,6 +413,12 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(value);
   });
 
+  // Find an item in an array by key/value
+  eleventyConfig.addFilter("find", function(arr, key, value) {
+    if (!Array.isArray(arr)) return null;
+    return arr.find(item => item[key] === value) || null;
+  });
+
   // Markdown filter for rendering README content
   eleventyConfig.addFilter("markdown", function(content) {
     return md.render(content);
