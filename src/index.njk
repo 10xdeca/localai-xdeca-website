@@ -16,7 +16,7 @@ fullWidth: true
 <div class="pcb-ctas">
 {% for cta in home.hero.ctas %}
 <a href="{{ cta.href }}" class="pcb-cta pcb-cta--{{ cta.accent }}"{% if cta.external %} target="_blank" rel="noopener"{% endif %}>
-<span class="pcb-cta__label"><i class="bi {{ cta.icon }} me-1"></i>{{ cta.label }}</span>
+<span class="pcb-cta__label"><i class="bi {{ cta.icon }} me-1"></i>{{ cta.label }}{% if cta.external %}<i class="bi bi-box-arrow-up-right ms-1 small"></i>{% endif %}</span>
 </a>
 {% endfor %}
 </div>
