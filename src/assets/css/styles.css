@@ -1593,6 +1593,30 @@ h1, h2, h3, h4, h5, h6,
   border-color: rgba(var(--color-primary-rgb), 0.4);
 }
 
+.cosmos-platform-card--soon {
+  opacity: 0.5;
+}
+
+.cosmos-platform-card__icon--muted {
+  opacity: 0.4;
+}
+
+.cosmos-platform-card__handle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--color-chat);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.cosmos-platform-card__soon-btn {
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: transparent;
+  font-size: 0.75rem;
+  cursor: default;
+}
+
 .cosmos-platform-card__icon {
   font-size: 2rem;
   color: var(--color-primary);

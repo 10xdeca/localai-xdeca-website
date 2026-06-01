@@ -15,7 +15,7 @@ fullWidth: true
 </div>
 <div class="pcb-ctas">
 {% for cta in home.hero.ctas %}
-<a href="{{ cta.href }}" class="pcb-cta pcb-cta--{{ cta.accent }}">
+<a href="{{ cta.href }}" class="pcb-cta pcb-cta--{{ cta.accent }}"{% if cta.external %} target="_blank" rel="noopener"{% endif %}>
 <span class="pcb-cta__label"><i class="bi {{ cta.icon }} me-1"></i>{{ cta.label }}</span>
 </a>
 {% endfor %}
@@ -46,13 +46,22 @@ fullWidth: true
       <div>
         <h2 class="cosmos-section__title cosmos-section__title--events mb-0"><i class="bi bi-calendar-event me-2"></i>{{ home.events.title }}</h2>
       </div>
-      <a href="{{ home.events.viewAllHref }}" class="cosmos-view-all cosmos-view-all--events d-none d-md-inline-flex">
+      <a href="{{ home.events.viewAllHref }}" class="cosmos-view-all cosmos-view-all--events d-none d-md-inline-flex"{% if home.events.viewAllExternal %} target="_blank" rel="noopener"{% endif %}>
         {{ home.events.viewAllLabel }} <i class="bi bi-arrow-right"></i>
       </a>
     </div>
-    {% set type = "upcoming" %}
-    {% include "partials/eventsList.njk" %}
-    <div><a href="{{ home.events.viewAllHref }}" class="cosmos-view-all cosmos-view-all--events d-md-none mt-4">{{ home.events.viewAllLabel }} <i class="bi bi-arrow-right"></i></a></div>
+    {% if collections.upcomingEvents | length %}
+      {% set type = "upcoming" %}
+      {% include "partials/eventsList.njk" %}
+    {% else %}
+      <div class="py-4 text-center">
+        <p class="cosmos-section__lead mx-auto mb-4" style="max-width:480px;">{{ home.events.subscribeLead }}</p>
+        <a href="{{ home.events.subscribeButton.href }}" class="btn btn-lg cosmos-glow-btn cosmos-glow-btn--events" target="_blank" rel="noopener">
+          <i class="bi {{ home.events.subscribeButton.icon }} me-2"></i>{{ home.events.subscribeButton.label }}
+        </a>
+      </div>
+    {% endif %}
+    <div><a href="{{ home.events.viewAllHref }}" class="cosmos-view-all cosmos-view-all--events d-md-none mt-4"{% if home.events.viewAllExternal %} target="_blank" rel="noopener"{% endif %}>{{ home.events.viewAllLabel }} <i class="bi bi-arrow-right"></i></a></div>
   </div>
 </section>
 

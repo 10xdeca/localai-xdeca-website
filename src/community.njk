@@ -1,39 +1,51 @@
 ---
 layout: base.njk
 title: Community Chat
-description: Join the Local AI community chat on Discord, Telegram, WhatsApp, Signal, or Matrix. Pick whichever app you already use and your messages will reach everyone on all the others.
+description: Join the Local AI community on Telegram. Share what you're building, get help, and stay across the latest open models.
 permalink: /community/
 fullWidth: true
 ---
 
 <!-- ── PAGE HERO ───────────────────────────── -->
-<section class="cosmos-page-hero">
+<section class="cosmos-page-hero cosmos-page-hero--chat">
   <div class="container">
-    <p class="cosmos-section__label">{{ community.hero.label }}</p>
-    <h1 class="cosmos-section__title mb-2">{{ community.hero.title }}</h1>
+    <p class="cosmos-section__label" style="color:var(--color-chat);">{{ community.hero.label }}</p>
+    <h1 class="cosmos-section__title cosmos-section__title--chat mb-2">{{ community.hero.title }}</h1>
     <p class="cosmos-section__lead" style="max-width:none;">{{ community.hero.lead }}</p>
   </div>
 </section>
 
-<!-- ── HOW IT WORKS + PLATFORMS ─────────────── -->
+<!-- ── HOW IT WORKS ─────────────────────────── -->
+<section class="cosmos-section cosmos-section--raised">
+  <div class="container">
+    <h2 class="cosmos-section__title cosmos-section__title--chat mb-2">{{ community.howItWorks.title }}</h2>
+    <p class="cosmos-section__lead mb-0" style="max-width:none;">{{ community.howItWorks.lead }}</p>
+  </div>
+</section>
+
+<!-- ── PLATFORMS ─────────────────────────────── -->
 <section class="cosmos-section">
   <div class="container">
-    <h2 class="cosmos-section__title mb-2" style="font-size:clamp(1rem,1.8vw,1.3rem);">{{ community.howItWorks.title }}</h2>
-    <p class="cosmos-section__lead mb-4" style="max-width:none;">{{ community.howItWorks.lead }}</p>
-    <div class="row g-0">
+    <div class="row g-3 justify-content-center">
       {% for platform in community.platforms %}
       <div class="col-6 col-md-4 col-lg">
-        <div class="cosmos-platform-card">
-          <i class="bi {{ platform.icon }} cosmos-platform-card__icon"></i>
+        <div class="cosmos-platform-card{% if platform.comingSoon %} cosmos-platform-card--soon{% endif %}">
+          <i class="bi {{ platform.icon }} cosmos-platform-card__icon{% if not platform.active %} cosmos-platform-card__icon--muted{% endif %}"></i>
           <p class="cosmos-platform-card__name">{{ platform.name }}</p>
-          <div class="cosmos-platform-card__qr{% if platform.comingSoon %} cosmos-platform-card__qr--placeholder{% endif %}">
-            {% if platform.comingSoon %}
-              <span>Coming soon</span>
-            {% else %}
+          {% if platform.active %}
+            <div class="cosmos-platform-card__qr">
               <img src="{{ platform.qr }}" alt="{{ platform.name }} QR code" />
+            </div>
+            {% if platform.handle %}
+            <p class="cosmos-platform-card__handle">{{ platform.handle }}</p>
             {% endif %}
-          </div>
-          <a href="{{ platform.joinHref }}" class="btn btn-primary btn-sm w-100">Join</a>
+            <a href="{{ platform.joinHref }}" class="btn btn-primary btn-sm w-100" target="_blank" rel="noopener">Join</a>
+          {% else %}
+            <div class="cosmos-platform-card__qr cosmos-platform-card__qr--placeholder">
+              <span>Coming soon</span>
+            </div>
+            <button class="btn btn-sm w-100 cosmos-platform-card__soon-btn" disabled>Coming soon</button>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -41,16 +53,18 @@ fullWidth: true
   </div>
 </section>
 
-<!-- ── NEWSLETTER ─────────────────────────────── -->
-<section class="cosmos-section">
+<!-- ── SUBSCRIBE ─────────────────────────────── -->
+<section class="cosmos-section cosmos-section--raised">
   <div class="container text-center">
-    <p class="cosmos-section__label">{{ community.newsletter.label }}</p>
-    <h2 class="cosmos-section__title mb-2">{{ community.newsletter.title }}</h2>
-    <p class="cosmos-section__lead mb-4 mx-auto">{{ community.newsletter.lead }}</p>
-    <form class="cosmos-newsletter-form" action="{{ community.newsletter.actionHref }}" method="post">
+    <p class="cosmos-section__label" style="color:var(--color-chat);">{{ community.subscribe.label }}</p>
+    <h2 class="cosmos-section__title cosmos-section__title--chat mb-2">{{ community.subscribe.title }}</h2>
+    <p class="cosmos-section__lead mb-4 mx-auto">{{ community.subscribe.lead }}</p>
+    <form name="{{ community.subscribe.formName }}" data-netlify="true" netlify-honeypot="bot-field" method="POST" class="cosmos-newsletter-form">
+      <input type="hidden" name="form-name" value="{{ community.subscribe.formName }}" />
+      <p hidden><input name="bot-field" /></p>
       <div class="d-flex gap-2 justify-content-center">
-        <input type="email" name="email" class="form-control" placeholder="{{ community.newsletter.placeholder }}" required style="max-width:320px;" />
-        <button type="submit" class="btn btn-primary flex-shrink-0">{{ community.newsletter.buttonLabel }}</button>
+        <input type="email" name="email" class="form-control" placeholder="{{ community.subscribe.placeholder }}" required style="max-width:320px;" />
+        <button type="submit" class="btn cosmos-glow-btn cosmos-glow-btn--chat flex-shrink-0">{{ community.subscribe.buttonLabel }}</button>
       </div>
     </form>
   </div>

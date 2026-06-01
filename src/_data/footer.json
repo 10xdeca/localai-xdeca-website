@@ -10,7 +10,7 @@
       "headingHref": "/",
       "links": [
         { "label": "About", "href": "/about/" },
-        { "label": "Events", "href": "/events/", "icon": "bi-calendar-event" },
+        { "label": "Events", "href": "https://lu.ma/localai", "icon": "bi-calendar-event", "external": true },
         { "label": "lu.ma/localai", "href": "https://lu.ma/localai", "external": true },
         { "label": "xdeca.com", "href": "https://xdeca.com", "external": true }
       ]
