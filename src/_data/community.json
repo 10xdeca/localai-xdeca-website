@@ -10,9 +10,15 @@
   },
   "platforms": [
     {
+      "icon": "bi-grid-3x3-gap-fill",
+      "name": "Matrix",
+      "qr": "/assets/images/matrix-qr.png",
+      "joinHref": "https://matrix.to/#/#localai:matrix.electronworkshop.com.au",
+      "active": true
+    },
+    {
       "icon": "bi-telegram",
       "name": "Telegram",
-      "handle": "@locallyai",
       "qr": "/assets/images/telegram-qr.png",
       "joinHref": "https://t.me/locallyai",
       "active": true
@@ -20,22 +26,23 @@
     {
       "icon": "bi-discord",
       "name": "Discord",
-      "comingSoon": true
+      "qr": "/assets/images/discord-qr.png",
+      "joinHref": "https://discord.gg/5Hdy9sDJc",
+      "active": true
+    },
+    {
+      "icon": "bi-signal",
+      "name": "Signal",
+      "qr": "/assets/images/signal-qr.png",
+      "joinHref": "https://signal.group/#CjQKIHZrZTIxzHafWjZyC9xhkgR_TR5vJLax3inH7tcI8KkREhBeU4D-TGlNR8rPLZrp_Z9N",
+      "active": true
     },
     {
       "icon": "bi-whatsapp",
       "name": "WhatsApp",
-      "comingSoon": true
-    },
-    {
-      "icon": "bi-shield-fill-check",
-      "name": "Signal",
-      "comingSoon": true
-    },
-    {
-      "icon": "bi-grid-3x3-gap-fill",
-      "name": "Matrix",
-      "comingSoon": true
+      "qr": "/assets/images/whatsapp-qr.png",
+      "joinHref": "https://chat.whatsapp.com/Dedt78VhMWt3ilEurODCVa?s=qt&p=a&ilr=1",
+      "active": true
     }
   ],
   "subscribe": {
