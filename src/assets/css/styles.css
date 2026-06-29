@@ -1038,11 +1038,11 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (max-width: 768px) {
-  .cosmos-hero-pcb { min-height: 100svh; justify-content: flex-start; padding-top: 15vh; gap: 3.5rem; }
+  .cosmos-hero-pcb { min-height: 100svh; justify-content: flex-start; padding-top: 8vh; gap: 2rem; }
   .hero-content { padding: 0 1.5rem 0; }
-  .pcb-ctas { gap: 1rem; padding: 0 1.25rem 2.5rem; }
-  .pcb-cta { padding: 0.85rem 1.2rem; }
-  .pcb-cta__label { font-size: 0.95rem; max-width: 140px; }
+  .pcb-ctas { gap: 1.75rem; padding: 0 1.25rem 2.5rem; }
+  .pcb-cta { padding: 0.85rem 1.4rem; flex: 0 0 100%; }
+  .pcb-cta__label { font-size: 0.95rem; max-width: none; }
 }
 
 
